@@ -457,3 +457,448 @@
 
 
 </body></html>
+
+<!-- FanBridge Community Detail Screen -->
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Liverpool Global Community</title>
+<!-- Tailwind CSS v3 with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style data-purpose="custom-layout">
+    /* Remove scrollbars for a clean mobile look */
+    body::-webkit-scrollbar {
+      display: none;
+    }
+    body {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      background-color: #f8f9fa;
+    }
+    /* Fixed aspect ratio for mobile view container if on desktop */
+    .mobile-container {
+      max-width: 430px;
+      margin: 0 auto;
+      min-height: 100vh;
+      background-color: white;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    /* Tab active indicator */
+    .tab-active {
+      border-bottom: 2px solid #1d4ed8;
+      color: #1d4ed8;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body class="antialiased text-slate-900">
+<!-- BEGIN: Mobile Container -->
+<div class="mobile-container shadow-2xl">
+<!-- BEGIN: Status Bar Simulation -->
+
+<!-- END: Status Bar Simulation -->
+<!-- BEGIN: Top Navigation -->
+<nav class="flex justify-between items-center px-4 py-2" data-purpose="top-navigation">
+<button class="p-2 hover:bg-gray-100 rounded-full">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<button class="p-2 hover:bg-gray-100 rounded-full">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</nav>
+<!-- END: Top Navigation -->
+<!-- BEGIN: Community Header -->
+<section class="px-6 pt-4 pb-2" data-purpose="community-profile">
+<div class="flex items-center space-x-4">
+<!-- Logo -->
+<div class="w-20 h-20 rounded-full bg-red-700 flex items-center justify-center overflow-hidden border-2 border-gray-100">
+<img alt="Liverpool Logo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMToPJIcdOUmmqBrfosXTozbxPkwYhZzX5cwnAGGQKCO5_8oVbw2ECZypBK3L0LFnRaj3dE4wMjStwKIlj_hhB8vHU2Pxt5DaZ_VG7uJzZV4LKEwvQinrtdDP5jGvwTDHUsnUb7fIiAG9VPruuc-iPblI02FY6qPaCFoUEP8Z42UyWeUdNe6q4yCAB1Q9sdib1LuV8h-RFXqz5Z9B9zB75mxVj2ygtXAT9plbXtbwS2FqDr9Pqt7gKMJ3DFG4xKPt-Lg">
+</div>
+<!-- Info -->
+<div>
+<h1 class="text-xl font-bold">Liverpool Global</h1>
+<p class="text-sm text-gray-500">12.4K members • Public</p>
+</div>
+</div>
+<div class="mt-6 flex items-center space-x-2">
+<button class="flex-1 bg-blue-600 text-white py-3 rounded-2xl font-bold text-base shadow-sm active:bg-blue-700 transition-colors">
+          Join
+        </button>
+<button class="p-3 bg-gray-100 rounded-2xl">
+<svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+<p class="mt-4 text-sm text-gray-600 leading-relaxed">
+        The official global community for Liverpool fans around the world. You'll Never Walk Alone.
+      </p>
+</section>
+<!-- END: Community Header -->
+<!-- BEGIN: Tabs Navigation -->
+<div class="mt-4 px-6 border-b border-gray-100" data-purpose="tab-navigation">
+<div class="flex justify-between">
+<button class="pb-3 text-sm px-1 tab-active">Chat</button>
+<button class="pb-3 text-sm px-1 text-gray-500 font-medium">Voice Rooms</button>
+<button class="pb-3 text-sm px-1 text-gray-500 font-medium">Events</button>
+<button class="pb-3 text-sm px-1 text-gray-500 font-medium">About</button>
+</div>
+</div>
+<!-- END: Tabs Navigation -->
+<!-- BEGIN: Content Area -->
+<main class="flex-1 overflow-y-auto px-6 pt-4 pb-24" data-purpose="chat-content">
+<!-- Pinned Message -->
+<div class="mb-6" data-purpose="pinned-section">
+<span class="text-xs font-bold text-gray-400 uppercase tracking-wider block mb-2">Pinned</span>
+<div class="bg-gray-50 border border-gray-100 rounded-2xl p-4 flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm">
+<span class="text-lg">🏟️</span>
+</div>
+<div>
+<h3 class="text-sm font-bold">Match Day! ❤️</h3>
+<p class="text-xs text-gray-500">Today, 8:00 PM • vs Man City</p>
+</div>
+</div>
+<svg class="w-5 h-5 text-blue-600 rotate-45" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v6.586l.293-.293a1 1 0 011.414 1.414l-2 2a1 1 0 01-1.414 0l-2-2a1 1 0 111.414-1.414l.293.293V3a1 1 0 011-1zM3 11a1 1 0 011 1v2a1 1 0 001 1h10a1 1 0 001-1v-2a1 1 0 112 0v2a3 3 0 01-3 3H5a3 3 0 01-3-3v-2a1 1 0 011-1z"></path></svg>
+</div>
+</div>
+<!-- Chat List -->
+<div class="space-y-6" data-purpose="message-list">
+<!-- Message 1 -->
+<div class="flex items-start space-x-3">
+<img alt="Alex Morgan" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeK3gOU2os7zt3X7iPSZDFoifa7n-bknJT2no09EcmyCslDI1Fx8v5TDr7gzuPl087dF61Y6QjZ3Cnm7ZgGSTCnQoTcrKxDGCYhlVxWqTYxYZg5oe_90gW9Kk-a5hIEN50d3OeYgcHY4nvYTsEVf8kYvuTzvr8AHsgQepEUwO8t11W19o7_4HOGIxXWbAKZRfMMZqkw1ZvjUmjQgXgLV1sfjxbedVpcIiWluB9aItBGnwV5HPNuADc">
+<div class="flex-1">
+<div class="flex justify-between items-baseline">
+<h4 class="text-sm font-bold">Alex Morgan</h4>
+<span class="text-xs text-gray-400">9:41 AM</span>
+</div>
+<p class="text-sm text-gray-600">Let's go today! 🔥</p>
+</div>
+</div>
+<!-- Message 2 -->
+<div class="flex items-start space-x-3">
+<img alt="Luca Rossi" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGNlp9gwvJdZmXqrYJnPgr-syt4wRJWYWTDmxvlFOPpArOjTO_SH_89-KTQqbhNhUN0i5W9u38G_kUVSVfg5uGHFkdUbpEY8vAaPoxKXsZuk-fiYKAHXhv1FFJxw9SVK0lmIWf6_B1ewsiuhDttVRZYJNXYMRmVP8DJYWVaErybrMtxhqO66cBVf-AGEJh0xsnckhImxwS7jKix058V1R9NVhHtX0CLaOW1p3PtPM6aKI_7_kciCiV">
+<div class="flex-1">
+<div class="flex justify-between items-baseline">
+<h4 class="text-sm font-bold">Luca Rossi</h4>
+<span class="text-xs text-gray-400">9:38 AM</span>
+</div>
+<p class="text-sm text-gray-600">What a save!</p>
+</div>
+</div>
+<!-- Message 3 -->
+<div class="flex items-start space-x-3">
+<img alt="Priya Shah" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZv2EnZfHWgJTJtIrae08TtZXcS8oFh2VNGl1aLMzTlZOueQYFnZZyu4VW3L7fKM02gCNBBKc8OgCIyZ8b1iv3r7EOPrxhSOJoF17nZtoFgD0-tHUJgPGf6f7h9WRlOCTOx7c7O2ZkjX7O4eABqrsm7yEvZw04Qn6Sx1QRg1Zcj3Klx1wr6JtvxCj-hKLSLLo_oybyej41D849afad1gmTQrpoSzVnDSA46q3nbem2s_aTAthmBPok">
+<div class="flex-1">
+<div class="flex justify-between items-baseline">
+<h4 class="text-sm font-bold">Priya Shah</h4>
+<span class="text-xs text-gray-400">9:32 AM</span>
+</div>
+<p class="text-sm text-gray-600">This team is on fire!</p>
+</div>
+</div>
+<!-- Message 4 -->
+<div class="flex items-start space-x-3">
+<img alt="John Doe" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJj9SJ6bvOP3zoHuhF9Y_etBE0aGpsf09T1-unwUEI0ANPkUkr5O_1WOYhQ1r-6W5lQ23YYCHwamKwonZ_hIl__4paX0XTbrS2VDe-XjCJpI4UloXL84OiOeKUAsKbKvDJHLY61Yp1zLLqgwcatwH2klGfJgcVE8-7z1ddE56Mb9KYruS4XRJ0TJJCbz9oG9TzCzyOx57esKuXcNK8TfVDMWdtAXF-oDpYlScP6h6cfz69dWlRXhor">
+<div class="flex-1">
+<div class="flex justify-between items-baseline">
+<h4 class="text-sm font-bold">John Doe</h4>
+<span class="text-xs text-gray-400">9:30 AM</span>
+</div>
+<div class="flex items-center text-sm text-gray-500 mt-1">
+<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+              Photo
+            </div>
+</div>
+</div>
+</div>
+</main>
+<!-- END: Content Area -->
+<!-- BEGIN: Chat Input & Bottom Nav Bar -->
+<div class="fixed bottom-0 left-0 right-0 max-w-[430px] mx-auto bg-white border-t border-gray-100" data-purpose="footer-controls">
+<!-- Input Field Area -->
+<div class="px-6 py-4 flex items-center space-x-3">
+<div class="flex-1 bg-gray-50 rounded-2xl flex items-center px-4 py-3 border border-gray-100">
+<input class="bg-transparent border-none focus:ring-0 text-sm flex-1 p-0" placeholder="Type a message..." type="text">
+<button class="text-gray-400">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+<button class="bg-blue-600 text-white p-3 rounded-full shadow-lg">
+<svg class="w-5 h-5 transform rotate-90" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path></svg>
+</button>
+</div>
+<!-- Main Navigation Tabs -->
+<nav class="flex justify-between items-center px-6 pb-6 pt-2" data-purpose="main-nav">
+<div class="flex flex-col items-center">
+<svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
+<span class="text-[10px] mt-1 text-blue-600 font-medium">Home</span>
+</div>
+<div class="flex flex-col items-center text-gray-400">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="text-[10px] mt-1">Marketplace</span>
+</div>
+<!-- Center Plus Button -->
+<div class="relative -top-4">
+<button class="bg-blue-600 w-14 h-14 rounded-full flex items-center justify-center text-white shadow-xl border-4 border-white">
+<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 6v6m0 0v6m0-6h6m-6 0H6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+<div class="flex flex-col items-center text-gray-400">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="text-[10px] mt-1">Chats</span>
+</div>
+<div class="flex flex-col items-center text-gray-400">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="text-[10px] mt-1">Wallet</span>
+</div>
+</nav>
+<!-- Home Indicator -->
+<div class="w-32 h-1.5 bg-black rounded-full mx-auto mb-2"></div>
+</div>
+<!-- END: Chat Input & Bottom Nav Bar -->
+</div>
+<!-- END: Mobile Container -->
+
+
+</body></html>
+
+<!-- FanBridge Communities Screen -->
+<!DOCTYPE html><html lang="en" style="width: 390px; height: 884px; overflow: hidden; position: relative;"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>FanBridge - Communities</title>
+<!-- Tailwind CSS v3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter for a modern iOS-like look -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            fanbridgeBlue: '#0055FF',
+            iosGray: '#F2F2F7',
+            iosTextGray: '#8E8E93',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-styling">
+    body {
+      -webkit-tap-highlight-color: transparent;
+      background-color: #FFFFFF;
+    }
+    /* Smooth transition for button states */
+    .btn-transition {
+      transition: all 0.2s ease-in-out;
+    }
+    /* Custom scrollbar hiding for clean mobile look */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="font-sans text-slate-900 bg-white min-h-screen flex flex-col">
+<!-- BEGIN: Top Header -->
+<header class="sticky top-0 bg-white/80 backdrop-blur-md z-30 px-4 pt-6 pb-2" data-purpose="main-header">
+<div class="flex justify-between items-center mb-4">
+<h1 class="text-2xl font-bold tracking-tight">Communities</h1>
+<!-- Notification/Refresh Icon Placeholder -->
+<button aria-label="Refresh" class="p-1 rounded-full hover:bg-gray-100">
+<svg class="h-6 w-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<!-- BEGIN: Search Bar -->
+<div class="relative mb-2" data-purpose="search-container">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<input class="block w-full pl-10 pr-3 py-2 bg-gray-100 border-none rounded-xl text-sm placeholder-gray-500 focus:ring-2 focus:ring-fanbridgeBlue focus:bg-white" placeholder="Search communities..." type="text">
+</div>
+<!-- END: Search Bar -->
+</header>
+<!-- END: Top Header -->
+<!-- BEGIN: Main Scrollable Content -->
+<main class="flex-grow px-4 pb-24 overflow-y-auto no-scrollbar">
+<!-- BEGIN: My Communities Section -->
+<section class="mt-6" data-purpose="my-communities-list">
+<div class="flex justify-between items-center mb-4">
+<h2 class="text-lg font-bold">My Communities</h2>
+<a class="text-sm font-semibold text-fanbridgeBlue" href="#">See All</a>
+</div>
+<div class="space-y-4">
+<!-- Community Item: Blue City FC (Joined) -->
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 rounded-full bg-blue-900 flex items-center justify-center overflow-hidden">
+<img alt="Blue City FC Logo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwsuoSncG9bHvopBkB0TzV7cjTeCAYtJTea_sqnOtf6UYpWpbP8kaBsiDGZA13fe1lSEjgS4DFU_IXUEeyJdY6kEeuJzkLwBPgNMrt0m5RU59tuON7ThsF0PdYQbfjPNQQlsDIxoSnS1ChkAbxJRBE0498GGnHkY6wYGhNBq0-6MOdJdKsTClFTBAXpKC6MgX-81E0Sv3nhyyo86HS5RzA4gg7HcBcPmJXaOGsFdrUlKxaeQeiD2xb">
+</div>
+<div>
+<p class="font-bold text-sm">Blue City FC</p>
+<p class="text-xs text-iosTextGray">43.2K Members</p>
+</div>
+</div>
+
+</div>
+<!-- Community Item: Thunder Basketball -->
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 rounded-full bg-orange-600 flex items-center justify-center overflow-hidden">
+<img alt="Thunder Basketball Logo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-IE_IJJYG4ePJ9zpMH5sXCdAvSND_UBgbhNAbg3IXWdiRVf6813nc3o1DZCTnbouA3aw5BUI6S1RvfXkDZrCKV_CJnscE9b70GHv2iRJ8PfInV8w0zOTWYCHe9OGcxIaEEkhcvjVGwGUAPitudmOMjpZSi9myKTaNQIj5aN_RhAnSqACVTgs1IcnoU2E5T0-jgoFZLT_00WXhkeoQYQ1TKKk75xERt81xWg3vwFE8DsUsiKbBQrjT">
+</div>
+<div>
+<p class="font-bold text-sm">Thunder Basketball</p>
+<p class="text-xs text-iosTextGray">28.7K Members</p>
+</div>
+</div>
+
+</div>
+<!-- Community Item: United Fans -->
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center overflow-hidden">
+<img alt="United Fans Logo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWo0fS592SU4CuMcPGeLg9si5QozOMCwZTSiP7svllQl876XaEkmwteFjhd5HcFnWcsKMGUytwkDOhv8M3s-X7st5OhNjRyMQF6Jqhm7aPfdLh4kRVoz25BK0K9Bvif5UvkYOGrm3afPmnzXtzXDJhS1T63ePIz99W0jtODwLZI4whoLLZUqeW1EM56VrwGUlucupeV4OvBZeIaSLEtRsCnyKT0b0oNNVS96ZPllKr3RKRZSxImOVH">
+</div>
+<div>
+<p class="font-bold text-sm">United Fans</p>
+<p class="text-xs text-iosTextGray">19.8K Members</p>
+</div>
+</div>
+
+</div>
+<!-- Community Item: Tennis World -->
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 rounded-full bg-green-600 flex items-center justify-center overflow-hidden">
+<img alt="Tennis World Logo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdzruYHN_ARxPRS4ra1lwIyvCgWzbfzvAgc-_0TIZpcjK_vdT7yic4BCyJu_8NtymyyYbviiEpQY8ouwgreBdInjkDd2WKlH32W_UZwWs_h6_Lm61Roresw631s4y9Ag7wAx3LHqyKETwIWHebER6WKjTHUpbdyaGNbuBEv5c7Ijfde6gobcmP7Mqbo95bI_aGoiQy07ZjZcgw3hb49grxPAUnuZa9OQ02wdPBIY80sgOWWgToSGS5">
+</div>
+<div>
+<p class="font-bold text-sm">Tennis World</p>
+<p class="text-xs text-iosTextGray">15.6K Members</p>
+</div>
+</div>
+
+</div>
+<!-- Community Item: Racing Hub -->
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center overflow-hidden">
+<img alt="Racing Hub Logo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcBjjTuNI0tp5DxH5jAZukm1-7jXYi3XvFFAcGuSp5YRNnxWaSqFlnl60BBfAxBgPYk9AiEHlgYK8HiutiWSXeOgzX1tFov3FHLuq7NG_j8uG0L5Nc3G4qUCKdbzE-pzMBjFWd3s9S9vm4Glcrm9ATHauVVQbk2aL3_HJjyMrDjWcfZkx0QHlmag1ahVc9VngUYlZuwGD9jKN18nx7_3kHRSmZlJ8ogDPKmMAr9zRTaJ5G2MqWnPYy">
+</div>
+<div>
+<p class="font-bold text-sm">Racing Hub</p>
+<p class="text-xs text-iosTextGray">12.4K Members</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+<!-- END: My Communities Section -->
+<!-- BEGIN: Popular Communities Section -->
+<section class="mt-8" data-purpose="popular-communities-list">
+<h2 class="text-lg font-bold mb-4">Popular Communities</h2>
+<div class="space-y-4">
+<!-- Popular Item: Victory FC -->
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 rounded-full bg-blue-700 flex items-center justify-center overflow-hidden">
+<img alt="Victory FC Logo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNK6H-0U5l0qJEau4j67Wq150WCTL2eK4QpXrHPjne6LpMl5uRXgtgilGyx-5HjHm01o5vaXQVqG3n2Runt6SVc7m0SzTVY8n2TvOzJ5lHhn3eSobyh5db7MrDIBMgdKwzyVF3-3mBJIfVm56m9V2f2ZiCDUmJHi3ps7HyfQAyzEvWuU3GBM_2Dw4vPCgDRwtWDixLQo2kRRcJigT3WQhaN0DJFgGemfHK6WAN5iRwAy_CUeG-gBAG">
+</div>
+<div>
+<p class="font-bold text-sm">Victory FC</p>
+<p class="text-xs text-iosTextGray">34.1K Members</p>
+</div>
+</div>
+<button class="px-7 py-1.5 rounded-lg bg-fanbridgeBlue text-white text-xs font-bold btn-transition">Join</button>
+</div>
+<!-- Popular Item: Hoops Talk -->
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 rounded-full bg-orange-500 flex items-center justify-center overflow-hidden">
+<img alt="Hoops Talk Logo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6Tbh3K5qqXGsltZgnEsPeilrrf526vBTZNKInk3UgrfiXhiJGfa4vj2OFOpJyaIZGu3JcJTIgZk_AE8JeDQex5NKuxrBC6w2pIadwyXuSR9gUsMsd2Xyy7nA5_Bek_uGHCkEY3Xp3hBwQSEQZ3IdsM-8eDIICM6ZGI2KcHAbmNt0hQQ9NBajRVfDfw0ZbXwZWW77uioIZAeMCsdmbtQxsNKh8GFGu_GjXh1_fcknuGIrakiFxU-iH">
+</div>
+<div>
+<p class="font-bold text-sm">Hoops Talk</p>
+<p class="text-xs text-iosTextGray">25.6K Members</p>
+</div>
+</div>
+<button class="px-7 py-1.5 rounded-lg bg-fanbridgeBlue text-white text-xs font-bold btn-transition">Join</button>
+</div>
+<!-- Popular Item: Game Day Live -->
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center overflow-hidden">
+<img alt="Game Day Live Logo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK0edZYgvR_r5h6wkUNXp0K-2WDW5MTm84BzubjSJtvjNPYcS2rO_WsGRXz_Mnxfbmacwooi28qn18Mfvu_oy28zRqYO7nFhvkiWQS7Quqvwd5Ox0rlSojTFojNm1fdoCNSaCzcGiIIGk3Diu4v1PUefXJ6ilxkwbmG9vsrNe7mi_5aU_LhdzZhzUWxWrrzx7K9TKcLHkUj_8f8HDxOoHa3OhqyFEeS1Hs0WNguyr2QK2IolmBMz4W">
+</div>
+<div>
+<p class="font-bold text-sm">Game Day Live</p>
+<p class="text-xs text-iosTextGray">18.9K Members</p>
+</div>
+</div>
+<button class="px-7 py-1.5 rounded-lg bg-fanbridgeBlue text-white text-xs font-bold btn-transition">Join</button>
+</div>
+</div>
+</section>
+<!-- END: Popular Communities Section -->
+</main>
+<!-- END: Main Scrollable Content -->
+<!-- BEGIN: Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 px-6 py-2 pb-6 flex justify-between items-center z-40" data-purpose="bottom-navigation">
+<!-- Feed -->
+<button class="flex flex-col items-center space-y-1 text-iosTextGray">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-[10px] font-medium">Feed</span>
+</button>
+<!-- Communities (Active) -->
+<button class="flex flex-col items-center space-y-1 text-fanbridgeBlue">
+<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12c0-5.523-4.477-10-10-10z"></path>
+<!-- Simplified Community Group Icon approximation -->
+<circle cx="9" cy="7" fill="none" r="4" stroke="currentColor" stroke-width="2"></circle>
+<path d="M9 15c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="none" stroke="currentColor" stroke-width="2"></path>
+</svg>
+<span class="text-[10px] font-bold">Communities</span>
+</button>
+<!-- Translate -->
+<button class="flex flex-col items-center space-y-1 text-iosTextGray">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 11.37 9.198 14.53 3 18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-[10px] font-medium">Translate</span>
+</button>
+<!-- Chats -->
+<button class="flex flex-col items-center space-y-1 text-iosTextGray">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-[10px] font-medium">Chats</span>
+</button>
+<!-- Wallet -->
+<button class="flex flex-col items-center space-y-1 text-iosTextGray">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-[10px] font-medium">Wallet</span>
+</button>
+</nav>
+<!-- END: Bottom Navigation Bar -->
+
+
+</body></html>
