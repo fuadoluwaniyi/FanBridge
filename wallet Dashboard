@@ -692,3 +692,651 @@
 
 
 </body></html>
+
+<!-- FanBridge Send Assets Screen -->
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>FanBridge - Send Transaction</title>
+<!-- Material Symbols for Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline-variant": "#c3c5d9",
+            "surface-tint": "#0050e3",
+            "surface-container-high": "#e2e7ff",
+            "surface-container-low": "#f2f3ff",
+            "secondary-fixed-dim": "#41dfa5",
+            "inverse-surface": "#283044",
+            "outline": "#737687",
+            "on-primary-fixed-variant": "#003bae",
+            "on-surface": "#131b2e",
+            "primary": "#004ad3",
+            "secondary-container": "#64fcbf",
+            "on-secondary-container": "#007350",
+            "primary-fixed-dim": "#b5c4ff",
+            "on-tertiary-fixed": "#380d00",
+            "on-tertiary-container": "#fff2ee",
+            "on-primary-container": "#f4f3ff",
+            "on-primary": "#ffffff",
+            "on-background": "#131b2e",
+            "inverse-on-surface": "#eef0ff",
+            "surface-container": "#eaedff",
+            "background": "#faf8ff",
+            "on-error-container": "#93000a",
+            "on-primary-fixed": "#00164e",
+            "inverse-primary": "#b5c4ff",
+            "primary-container": "#1d61ff",
+            "surface-bright": "#faf8ff",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed": "#64fcbf",
+            "surface-variant": "#dae2fd",
+            "tertiary-container": "#c74200",
+            "on-error": "#ffffff",
+            "tertiary-fixed-dim": "#ffb59b",
+            "surface-dim": "#d2d9f4",
+            "secondary": "#006c4b",
+            "error-container": "#ffdad6",
+            "on-secondary": "#ffffff",
+            "primary-fixed": "#dce1ff",
+            "on-tertiary-fixed-variant": "#822800",
+            "on-surface-variant": "#434656",
+            "on-secondary-fixed": "#002114",
+            "surface": "#faf8ff",
+            "surface-container-highest": "#dae2fd",
+            "tertiary-fixed": "#ffdbcf",
+            "tertiary": "#9e3300",
+            "on-secondary-fixed-variant": "#005138",
+            "on-tertiary": "#ffffff",
+            "error": "#ba1a1a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "lg": "24px",
+            "xs": "8px",
+            "xl": "32px",
+            "margin-mobile": "20px",
+            "base": "4px",
+            "md": "16px",
+            "sm": "12px",
+            "gutter": "16px"
+          },
+          "fontFamily": {
+            "display-lg": ["Inter"],
+            "display-lg-mobile": ["Inter"],
+            "body-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "label-sm": ["Inter"],
+            "headline-md": ["Inter"]
+          },
+          "fontSize": {
+            "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "display-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+            "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "500"}],
+            "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+            "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Inter', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+    }
+    input:focus {
+      outline: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-xl">
+<!-- Top App Bar (Task Focused: suppress global nav shell) -->
+<header class="w-full top-0 sticky z-50 bg-surface flex items-center justify-between px-margin-mobile py-md">
+<button class="text-on-surface hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-body-lg text-body-lg text-on-surface flex-1 text-center">Send</h1>
+<button class="text-on-surface hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined">history</span>
+</button>
+</header>
+<main class="px-margin-mobile space-y-xl mt-md">
+<!-- To Section -->
+<section class="space-y-sm">
+<h2 class="font-body-md text-body-md text-on-surface-variant px-xs">To</h2>
+<div class="space-y-xs">
+<!-- Address Input Container -->
+<div class="relative flex items-center bg-surface-container-lowest border border-outline-variant rounded-xl p-md focus-within:border-primary transition-colors">
+<input class="w-full bg-transparent font-body-md text-body-md text-on-surface placeholder-outline focus:ring-0 border-none p-0" placeholder="Enter address or domain" type="text">
+<button class="ml-sm text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+<!-- Scan Helper -->
+<div class="flex items-center justify-between py-xs px-xs">
+<p class="font-label-sm text-label-sm text-on-surface-variant">You can also scan a QR code</p>
+<button class="flex items-center gap-xs px-md py-sm bg-surface-container-high rounded-lg text-primary font-body-lg text-body-lg hover:bg-surface-variant transition-colors active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'opsz' 20">qr_code_scanner</span>
+<span class="">Scan</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Asset Selection Section -->
+<section class="space-y-sm">
+<h2 class="font-body-md text-body-md text-on-surface-variant px-xs">Asset</h2>
+<button class="w-full flex items-center justify-between bg-surface-container-lowest border border-outline-variant rounded-xl p-md hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1">currency_exchange</span>
+</div>
+<div class="text-left">
+<p class="font-body-md text-body-md text-on-surface">Ethereum</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">ETH</p>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<div class="text-right">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Balance</p>
+<p class="font-body-md text-body-md text-on-surface">1.2467 ETH</p>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">expand_more</span>
+</div>
+</button>
+</section>
+<!-- Amount Section -->
+<section class="space-y-sm">
+<h2 class="font-body-md text-body-md text-on-surface-variant px-xs">Amount</h2>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md space-y-md">
+<!-- ETH Amount Input Row -->
+<div class="flex items-end justify-between">
+<div class="flex-1">
+<input class="w-full bg-transparent font-headline-md text-headline-md text-on-surface placeholder-outline-variant focus:ring-0 border-none p-0 [appearance:textfield] [&amp;::-webkit-outer-spin-button]:appearance-none [&amp;::-webkit-inner-spin-button]:appearance-none" placeholder="0.00" type="number">
+</div>
+<span class="font-body-lg text-body-lg text-outline-variant pb-base">ETH</span>
+</div>
+<!-- Fiat Value Row -->
+<div class="flex items-center justify-between">
+<p class="font-body-md text-body-md text-on-surface-variant">$0.00</p>
+<button class="bg-primary-container text-on-primary-container font-label-sm text-label-sm px-md py-xs rounded-lg hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+            Max
+          </button>
+</div>
+</div>
+</section>
+<!-- Network Fee Section -->
+<section class="bg-surface-container-low rounded-xl p-md flex items-center justify-between">
+<div class="flex items-center gap-xs text-on-surface-variant">
+<p class="font-body-md text-body-md scale-90 origin-left">Network Fee</p>
+<span class="material-symbols-outlined text-[18px] cursor-help">info</span>
+</div>
+<div class="text-right">
+<p class="font-body-md text-body-md text-on-surface scale-90 origin-left">0.0021 ETH</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant scale-90 origin-left">$3.22</p>
+</div>
+</section>
+</main>
+<!-- Primary Action Footer (Fixed/Floating) -->
+<div class="fixed bottom-0 left-0 w-full p-margin-mobile bg-gradient-to-t from-background via-background/90 to-transparent pt-xl">
+<button class="w-full bg-primary text-on-primary font-body-lg text-body-lg py-md rounded-xl shadow-lg shadow-primary/20 hover:bg-on-primary-fixed-variant transition-colors active:scale-[0.98] transition-transform flex items-center justify-center gap-sm">
+      Review Transaction
+    </button>
+</div>
+<script>
+    // Simple logic for input focus effects
+    const amountInput = document.querySelector('input[type="number"]');
+    const inputContainer = amountInput.closest('.bg-surface-container-lowest');
+
+    amountInput.addEventListener('focus', () => {
+      inputContainer.classList.add('border-primary');
+      inputContainer.classList.add('ring-2');
+      inputContainer.classList.add('ring-primary/10');
+    });
+
+    amountInput.addEventListener('blur', () => {
+      inputContainer.classList.remove('border-primary');
+      inputContainer.classList.remove('ring-2');
+      inputContainer.classList.remove('ring-primary/10');
+    });
+
+    // Handle Max button click
+    const maxBtn = document.querySelector('button:contains("Max")');
+    if (maxBtn) {
+        maxBtn.addEventListener('click', () => {
+            amountInput.value = "1.2467";
+            // Trigger an animation or feedback here if desired
+        });
+    }
+
+    // Helper for :contains selector in vanilla JS
+    window.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('button').forEach(btn => {
+            if (btn.textContent.trim() === 'Max') {
+                btn.addEventListener('click', () => {
+                    document.querySelector('input[type="number"]').value = "1.2446"; // 1.2467 - fee
+                });
+            }
+        });
+    });
+  </script>
+
+
+
+
+</body></html>
+
+<!-- FanBridge Receive Assets Screen -->
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Receive Assets - FanBridge Direct</title>
+<!-- Tailwind CSS v3 CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1d61ff',
+            surface: {
+              DEFAULT: '#ffffff',
+              dim: '#d2d9f4',
+              bright: '#faf8ff',
+              lowest: '#ffffff',
+              low: '#f2f3ff',
+            },
+            accent: '#1d61ff',
+          },
+          borderRadius: {
+            '8': '8px',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-layout">
+    body {
+      background-color: #ffffff;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .qr-container {
+      aspect-ratio: 1 / 1;
+    }
+  </style>
+</head>
+<body class="font-sans text-slate-900">
+<!-- BEGIN: NavigationBar -->
+<nav class="flex items-center justify-between px-4 py-4 sticky top-0 bg-white z-10" data-purpose="top-navigation">
+<button aria-label="Go back" class="p-2 -ml-2">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m15 18-6-6 6-6"></path></svg>
+</button>
+<h1 class="text-base font-bold">Receive</h1>
+<button aria-label="Share" class="p-2 -mr-2">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" x2="12" y1="2" y2="15"></line></svg>
+</button>
+</nav>
+<!-- END: NavigationBar -->
+<main class="px-4 pb-10 space-y-6">
+<!-- BEGIN: AssetSelection -->
+<div data-purpose="receive-selection-group">
+<div class="font-bold text-sm">Ethereum</div>
+<div class="flex items-center justify-between p-4 border border-slate-100 rounded-2xl shadow-sm bg-white cursor-pointer">
+<div class="flex items-center gap-3">
+<!-- Placeholder for Ethereum Icon -->
+<div class="w-10 h-10 rounded-full bg-[#f2f3ff] flex items-center justify-center overflow-hidden">
+<img alt="ETH" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKDEEiSzx7zwhOz7rg7K2Xz8jYDCiyUl6CC0RdtLxls372nNeq1j1r_5q20xGuS58r5rsBcnSdnEmzRYcoMNXg4asSiAV8koejCcGBi8rq4wOJOANYeAADeKAbM0ndW_dS7PvobrQhdBRZN4dSV1On6FLxjz-NVAQM3eWf10WkkP7QXja_8FadXrnpbg7CvKAWsWZ7xTvKdrss8aKeQzK5U5BCAy6RrtHm6aoI6D2oEg4Od5UhGODO">
+</div>
+<div>
+<div class="font-bold text-sm">Ethereum</div>
+<div class="text-xs text-slate-400">ETH</div>
+</div>
+</div>
+<svg class="text-slate-400" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="m6 9 6 6 6-6"></path></svg>
+</div>
+</div>
+<!-- END: AssetSelection -->
+<!-- BEGIN: QRCodeSection -->
+<div class="flex justify-center py-4" data-purpose="qr-code-container">
+<div class="p-6 bg-white border border-slate-100 rounded-[32px] shadow-sm max-w-[280px] w-full">
+<div class="qr-container bg-white border border-slate-50 rounded-2xl flex items-center justify-center p-2 relative">
+<!-- This is where the QR code from the reference is represented -->
+<div class="w-full h-full flex items-center justify-center bg-white relative overflow-hidden rounded-lg">
+<!-- Using the provided image for the specific QR layout if possible, otherwise placeholder -->
+<img alt="Wallet QR Code" class="w-full h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_dL0jAinNz7RwC03DAgVG_aw8JN4iEhMpXjdXSj8WE0hb2g2ozMpR_PWusZoQij1lOJak3Y-W7INBUx6ySTol5j3tv_9MoLqlRXLJBFQ66FCHxXXc-pivDk0W5XX_q5DT124oms96xsL-avo8ZGBIlRrCp-vieRIuY_qtO9vsf6ayupml2IclH9-q5zORqzS-_UdHLu5uRwkOH9lpm_MGzC2lWQKaTlxsMLD5qsq_2lnaZsY9TK8z">
+<!-- Logo overlay in center of QR -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-10 h-10 bg-white rounded-lg p-1 shadow-md">
+<div class="w-full h-full bg-primary rounded-md flex items-center justify-center text-white font-black italic text-xs">F</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- END: QRCodeSection -->
+<!-- BEGIN: AddressCard -->
+<div class="p-4 border border-slate-100 rounded-2xl shadow-sm bg-white" data-purpose="wallet-address-card">
+<div class="text-center text-xs text-slate-400 mb-1">Your Wallet Address</div>
+<div class="flex items-center justify-between">
+<div class="w-8 h-8 opacity-0"></div> <!-- Spacer for centering -->
+<div class="text-base font-semibold tracking-tight">0x7a3F...a8D4...9fE2</div>
+<button aria-label="Copy Address" class="text-primary p-2">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><rect height="14" rx="2" ry="2" width="14" x="8" y="8"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>
+</button>
+</div>
+</div>
+<!-- END: AddressCard -->
+<!-- BEGIN: WarningNotice -->
+<div class="bg-blue-50/50 rounded-2xl p-4 flex gap-3 items-start" data-purpose="security-warning">
+<div class="mt-0.5 text-primary">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+</div>
+<div class="text-xs leading-tight text-slate-600">Only send Ethereum (ETH) to this address. Sending other assets may result in permanent loss.</div>
+</div>
+<!-- END: WarningNotice -->
+<!-- BEGIN: ActionButtons -->
+<div class="pt-4 space-y-3" data-purpose="primary-actions">
+<button class="w-full py-4 px-6 rounded-2xl border border-primary text-primary font-bold flex items-center justify-center gap-2 transition-active active:bg-slate-50"><svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><rect height="14" rx="2" ry="2" width="14" x="8" y="8"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg><span class="text-sm">Copy Address</span></button>
+<button class="w-full py-4 px-6 rounded-2xl bg-primary text-white font-bold flex items-center justify-center gap-2 transition-active active:bg-blue-700 shadow-lg shadow-blue-200"><svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" x2="12" y1="2" y2="15"></line></svg><span class="text-sm">Share Address</span></button>
+</div>
+<!-- END: ActionButtons -->
+</main>
+
+
+</body></html>
+
+<!-- FanBridge Swap Assets Screen -->
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>FanBridge - Swap Assets</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#64fcbf",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#64fcbf",
+                    "primary-fixed-dim": "#b5c4ff",
+                    "on-tertiary-fixed-variant": "#822800",
+                    "surface": "#faf8ff",
+                    "on-primary-container": "#f4f3ff",
+                    "on-secondary-container": "#007350",
+                    "background": "#faf8ff",
+                    "primary": "#004ad3",
+                    "on-surface": "#131b2e",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#0050e3",
+                    "on-secondary": "#ffffff",
+                    "surface-bright": "#faf8ff",
+                    "tertiary-fixed": "#ffdbcf",
+                    "error": "#ba1a1a",
+                    "surface-container-high": "#e2e7ff",
+                    "inverse-primary": "#b5c4ff",
+                    "outline": "#737687",
+                    "surface-container-low": "#f2f3ff",
+                    "secondary": "#006c4b",
+                    "on-tertiary-fixed": "#380d00",
+                    "on-tertiary": "#ffffff",
+                    "inverse-surface": "#283044",
+                    "on-background": "#131b2e",
+                    "surface-container": "#eaedff",
+                    "tertiary-fixed-dim": "#ffb59b",
+                    "secondary-fixed-dim": "#41dfa5",
+                    "on-secondary-fixed": "#002114",
+                    "on-error-container": "#93000a",
+                    "surface-container-highest": "#dae2fd",
+                    "surface-variant": "#dae2fd",
+                    "tertiary": "#9e3300",
+                    "on-surface-variant": "#434656",
+                    "on-secondary-fixed-variant": "#005138",
+                    "primary-container": "#1d61ff",
+                    "tertiary-container": "#c74200",
+                    "on-primary-fixed-variant": "#003bae",
+                    "inverse-on-surface": "#eef0ff",
+                    "surface-dim": "#d2d9f4",
+                    "primary-fixed": "#dce1ff",
+                    "on-primary-fixed": "#00164e",
+                    "on-tertiary-container": "#fff2ee",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#c3c5d9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "base": "4px",
+                    "xs": "8px",
+                    "margin-mobile": "20px",
+                    "lg": "24px",
+                    "md": "16px",
+                    "sm": "12px",
+                    "xl": "32px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "display-lg-mobile": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "display-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "500"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #faf8ff;
+        }
+        .swap-input-focus:focus-within {
+            border-color: #004ad3;
+            box-shadow: 0 0 0 2px rgba(0, 74, 211, 0.1);
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-32">
+<!-- Top App Bar (Shared Component Logic) -->
+<header class="w-full top-0 sticky z-50 bg-surface dark:bg-on-background flex items-center justify-between px-margin-mobile py-md w-full">
+<button class="hover:opacity-80 transition-opacity active:scale-95 transition-transform text-primary dark:text-primary-fixed-dim">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-on-surface text-body-lg" style="opacity: 0;">Swap</h1>
+<button class="hover:opacity-80 transition-opacity active:scale-95 transition-transform text-primary dark:text-primary-fixed-dim">
+<span class="material-symbols-outlined">history</span>
+</button>
+</header>
+<main class="px-margin-mobile pt-md space-y-xl max-w-lg mx-auto">
+<!-- You Pay Section -->
+<section class="space-y-sm">
+<h2 class="font-body-lg text-on-surface-variant text-body-md">You Pay</h2>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md swap-input-focus transition-all duration-200">
+<div class="flex justify-between items-center mb-md">
+<div class="flex items-center gap-sm bg-surface-container-low p-xs pr-md rounded-full cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container" style="font-size: 20px;">currency_bitcoin</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-lg text-body-lg text-on-surface leading-tight">Ethereum</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">ETH</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<div class="flex justify-between items-baseline mb-sm">
+<input class="w-full bg-transparent border-none p-0 font-display-lg-mobile text-on-surface focus:ring-0 placeholder-outline-variant text-headline-md" placeholder="0.00" type="text" value="0.50">
+<span class="font-headline-md text-on-surface-variant text-body-lg">ETH</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">$910.25</span>
+<div class="flex items-center gap-xs">
+<span class="font-body-md text-body-md text-on-surface-variant">Balance: 1.2467 ETH</span>
+<button class="px-sm py-xs bg-primary-container text-on-primary-container font-label-sm text-label-sm rounded-lg hover:opacity-90 active:scale-95 transition-all">Max</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Swap Icon -->
+<div class="flex justify-center -my-6 relative z-10">
+<button class="w-12 h-12 bg-surface-container-lowest border border-outline-variant rounded-full flex items-center justify-center text-primary shadow-sm hover:border-primary active:scale-90 transition-all">
+<span class="material-symbols-outlined">swap_vert</span>
+</button>
+</div>
+<!-- You Receive Section -->
+<section class="space-y-sm">
+<h2 class="font-body-lg text-on-surface-variant text-body-md">You Receive</h2>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md swap-input-focus transition-all duration-200">
+<div class="flex justify-between items-center mb-md">
+<div class="flex items-center gap-sm bg-surface-container-low p-xs pr-md rounded-full cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container" style="font-size: 20px;">monetization_on</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-lg text-body-lg text-on-surface leading-tight">USD Coin</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">USDC</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<div class="flex justify-between items-baseline mb-sm">
+<input class="w-full bg-transparent border-none p-0 font-display-lg-mobile text-on-surface focus:ring-0 placeholder-outline-variant text-headline-md" readonly="" type="text" value="905.12">
+<span class="font-headline-md text-on-surface-variant text-body-lg">USDC</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">$905.12</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Balance: 320.50 USDC</span>
+</div>
+</div>
+</section>
+<!-- Exchange Rate Info -->
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-md flex justify-between items-center">
+<div class="space-y-xs">
+<div class="flex items-center gap-xs font-body-lg text-on-surface text-body-md">
+<span class="">1 ETH ≈ 1,810.24 USDC</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Rate updates in 00:26</p>
+</div>
+<button class="text-primary hover:rotate-180 transition-transform duration-500">
+<span class="material-symbols-outlined">refresh</span>
+</button>
+</div>
+<!-- Network Fee Section -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex justify-between items-center">
+<div class="flex items-center gap-xs">
+<span class="font-body-md text-body-md text-on-surface">Network Fee</span>
+<span class="material-symbols-outlined text-on-surface-variant" style="font-size: 18px;">info</span>
+</div>
+<div class="text-right">
+<p class="font-body-lg text-body-lg text-on-surface">0.0021 ETH</p>
+<p class="font-body-md text-body-md text-on-surface-variant">$3.22</p>
+</div>
+</div>
+</main>
+<!-- Bottom Action Button Container -->
+<div class="fixed bottom-0 left-0 w-full p-margin-mobile bg-surface/80 backdrop-blur-md">
+<button class="w-full bg-primary text-on-primary rounded-xl font-headline-md hover:bg-primary-container active:scale-95 transition-all shadow-lg max-w-lg mx-auto block text-body-lg py-md">
+            Review Swap
+        </button>
+</div>
+<!-- Bottom Nav Bar (Shared Component Logic - Suppression logic: Show because it's a top-level feature in the mockup description) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-xs pb-safe pt-xs bg-surface/80 dark:bg-on-background/80 backdrop-blur-md border-t border-outline-variant dark:border-outline md:hidden">
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors active:scale-90 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-label-sm text-label-sm">Wallet</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors active:scale-90 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-label-sm text-label-sm">Activity</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-xl px-3 py-1 active:scale-90 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined">swap_horiz</span>
+<span class="font-label-sm text-label-sm">Swap</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors active:scale-90 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-label-sm text-label-sm">Explore</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-3 py-1 hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors active:scale-90 transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</div>
+</nav>
+<script>
+        // Simple Micro-interaction for inputs
+        const inputs = document.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.parentElement.classList.add('border-primary');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.parentElement.classList.remove('border-primary');
+            });
+        });
+
+        // Numeric input only logic
+        inputs.forEach(input => {
+            input.addEventListener('input', (e) => {
+                let value = e.target.value.replace(/[^0-9.]/g, '');
+                // Allow only one dot
+                const dots = value.match(/\./g);
+                if (dots && dots.length > 1) {
+                    value = value.slice(0, value.lastIndexOf('.'));
+                }
+                e.target.value = value;
+            });
+        });
+    </script>
+
+
+</body></html>
