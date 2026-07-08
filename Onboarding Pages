@@ -470,3 +470,169 @@
 </main>
 <!-- END: MainContainer -->
 </body></html>
+
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FanBridge - Shop. Buy. Support.</title>
+<!-- Tailwind CSS v3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#1A56DB', // Deep blue as seen in reference
+              light: '#F3F4F6',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Typography Styles -->
+<style data-purpose="typography">
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .text-balance {
+      text-wrap: balance;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900 min-h-screen flex flex-col">
+<!-- BEGIN: Header Section -->
+<header class="px-6 pt-12 pb-6" data-purpose="onboarding-header">
+<h1 class="text-3xl font-bold leading-tight">
+<span class="text-brand-blue">Shop. Buy. Support.</span><br/>
+<span>All in one place.</span>
+</h1>
+<p class="text-gray-500 mt-4 text-lg leading-snug">
+      Buy tickets, shop official merch and support your team.
+    </p>
+</header>
+<!-- END: Header Section -->
+<!-- BEGIN: Main Content Area -->
+<main class="flex-grow px-4" data-purpose="discovery-feed">
+<!-- White Card Container for the App Content -->
+<div class="bg-white rounded-[2rem] border border-gray-100 shadow-sm p-4 space-y-6">
+<!-- BEGIN: Category Tabs -->
+<nav class="flex justify-around items-center pt-2 pb-4" data-purpose="category-navigation">
+<!-- Active Tab: Tickets -->
+<button class="flex flex-col items-center space-y-1 bg-brand-blue text-white rounded-2xl px-5 py-3 shadow-md" data-purpose="nav-item-active">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 012-2h10a2 2 0 012 2v14a2 2 0 01-2 2H7a2 2 0 01-2-2V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-xs font-semibold">Tickets</span>
+</button>
+<!-- Tab: Merchandise -->
+<button class="flex flex-col items-center space-y-1 text-gray-400 px-4" data-purpose="nav-item">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-xs font-semibold">Merchandise</span>
+</button>
+<!-- Tab: Experiences -->
+<button class="flex flex-col items-center space-y-1 text-gray-400 px-4" data-purpose="nav-item">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-xs font-semibold">Experiences</span>
+</button>
+</nav>
+<!-- END: Category Tabs -->
+<!-- BEGIN: Ticket Card -->
+<section class="border border-gray-100 rounded-3xl p-4 shadow-sm" data-purpose="ticket-card">
+<div class="flex gap-4">
+<!-- Team Logos Visual -->
+<div class="w-1/2 rounded-2xl overflow-hidden bg-gray-50 flex items-center justify-center">
+<img alt="Match Graphic" class="w-full h-auto object-cover scale-150" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMH3yrZs_tNZOiiJrOaULfuz7Ch-pVDVSBJRO3EmVfpqHpimiG83ClVYh9WYRqhlcJqcpLLywWShUlENDTA1yFvORYJvSFp4ULQuIKP0vBeCaONiHyhzY5Rxq8GJU3XZ9OhLWkVbjn5OpiMmm1D4BlbOlW7YkHGWiXP3BLuijj1MvJnpo_jOoraxIrzkcoHzuoXUMe-Ltev7SNeOmH-heblCIlxHQwxb0u24c5uGaGQP_ikcRy5dwOGeJES4DeLikwCg"/>
+</div>
+<!-- Event Details -->
+<div class="w-1/2 flex flex-col justify-between py-1">
+<div>
+<h3 class="font-bold text-gray-900 text-sm">Barça vs Real Madrid</h3>
+<p class="text-[10px] text-gray-500">La Liga</p>
+<div class="mt-2 space-y-1">
+<div class="flex items-center text-[10px] text-gray-600 font-medium">
+<svg class="h-3 w-3 mr-1" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                  May 11, 2025 • 8:00 PM
+                </div>
+<div class="flex items-center text-[10px] text-gray-600 font-medium">
+<svg class="h-3 w-3 mr-1" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                  Camp Nou
+                </div>
+</div>
+</div>
+<button class="mt-4 bg-brand-blue text-white text-[11px] font-bold py-2 px-4 rounded-full w-full">
+              Buy Tickets
+            </button>
+</div>
+</div>
+</section>
+<!-- END: Ticket Card -->
+<!-- BEGIN: Merchandise Spotlight -->
+<section class="border border-gray-100 rounded-3xl p-4 shadow-sm" data-purpose="featured-merch">
+<div class="flex items-center gap-4">
+<div class="w-24 h-24 flex-shrink-0 bg-gray-50 rounded-2xl p-2">
+<img alt="Home Jersey" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQGhgqGC3gbnZrBuvxc_7WkBgMQTA_cvpRlj_bfl6uBvHH_pQTTFr9jApVALh-gzEfeWEnnTKKqxrRncaBhsVLxgUDojkj5pXrqOi7J-1AGVnvFBeWhCTqmwikhXw43bokDfAQa5a0wh1DJVOMSiNlfvP-OhcYbdjBcOcKHznT0TOW0iazDuFzGO6uOQtoUEuWEDWUBTJS9ftIOyxATyDy2s0hSO2nI3XpFeACk17AmMjAvh23tO-4sJRe9EKJxGxhkg"/>
+</div>
+<div>
+<h3 class="font-bold text-sm">New Home Jersey 24/25</h3>
+<p class="text-[10px] text-gray-500">Official Barcelona Jersey</p>
+<p class="text-lg font-bold mt-2">$89.99</p>
+</div>
+</div>
+</section>
+<!-- END: Merchandise Spotlight -->
+<!-- BEGIN: Top Sellers -->
+<section data-purpose="top-sellers-section">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-bold text-sm">Top Sellers</h3>
+<a class="text-brand-blue text-[11px] font-semibold" href="#">View all</a>
+</div>
+<div class="grid grid-cols-3 gap-3">
+<!-- Item: Cap -->
+<div class="aspect-square bg-gray-50 rounded-2xl p-2 flex items-center justify-center border border-gray-100">
+<img alt="Cap" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgKtuzI590mEJsNNpaNoFqmJF7rdfJJnNvOVJjdMxm6WdphjHZs_dq5weq23x5coC43_uX7lr3CzqU5KN2rzFCenxiMd7ScNUC4hG9Yfi91_zVll8fH4zfv9AUj7P009eqyitQrAaGEQSl3LcS5ZHVBX2Rve0WixY1I4jsn9yQkOG9QS7J95vyj_RgAJ46O_v2M3vgTnrDloDZmmWYhTj6jF3N-afw5hSXFILesE-YNPWcP6hjLdZ5"/>
+</div>
+<!-- Item: Scarf -->
+<div class="aspect-square bg-gray-50 rounded-2xl p-2 flex items-center justify-center border border-gray-100">
+<img alt="Scarf" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTneWF1BcIh5YwrxR-7NDGj-Lpn_Gs5-MJGKIHIqYAsVtLS6ds0nj_ceqgu3YLbtjEqPQuhJxRNEo0rbd2F-Ey7Gdr9ZElKGOBn12wP25XgW1e_ytuXznKmDRvMXYViZ7P_D3fZy6e3XXFpGUyRfN3DEpRCD0SqIhEqZkQgeG1toRgdL_sT09FU8ej7ucqvCNwwcV3rhiVRtdEKIgWMkP7TM6SDRCC-Px7NflWituie6VQM0-4X4k2"/>
+</div>
+<!-- Item: Bottle -->
+<div class="aspect-square bg-gray-50 rounded-2xl p-2 flex items-center justify-center border border-gray-100">
+<img alt="Bottle" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOPVmjVJMMswf2T9hJVrpDfTW7t_77M7GD4q8KhS2_cq5RaXjPgO0LzHD1NLccdtu7LSSYnsFoeQbrCZJGFq6I-voK2_j3UdExg0F-roIUVI2ebKTh4MhQMwesG7di-99hnkJF71dSiyK7VzaVZBMehX-H2ZAGuXJ0kbBViwkskysUaDQPntRyI4oWW9ybYzWT1nOCnir4_SelLGaIiL7NMNVM2uQ7M_ydjzGrRKV1ygQu_SBG2JC7"/>
+</div>
+</div>
+</section>
+<!-- END: Top Sellers -->
+</div>
+</main>
+<!-- END: Main Content Area -->
+<!-- BEGIN: Footer Controls -->
+<footer class="px-6 pb-10 pt-4 bg-white" data-purpose="bottom-navigation">
+<!-- Pagination Indicators -->
+<div class="flex justify-center items-center space-x-2 mb-8">
+<div class="h-1 w-6 bg-gray-200 rounded-full"></div>
+<div class="h-1 w-6 bg-gray-200 rounded-full"></div>
+<div class="h-2 w-2 bg-brand-blue rounded-full"></div>
+</div>
+<!-- CTA Button -->
+<button class="w-full bg-brand-blue text-white font-bold py-4 rounded-2xl shadow-lg shadow-blue-200 text-lg transition-transform active:scale-[0.98]">
+      Get Started
+    </button>
+<!-- Secondary Link -->
+<div class="text-center mt-6">
+<p class="text-gray-500 text-sm font-medium">
+        Already have an account? 
+        <a class="text-brand-blue font-bold ml-1" href="#">Log in</a>
+</p>
+</div>
+</footer>
+<!-- END: Footer Controls -->
+</body></html>
