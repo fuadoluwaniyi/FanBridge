@@ -1,0 +1,490 @@
+<!-- FanBridge Import Wallet Screen -->
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Import Existing Wallet - FanBridge</title>
+<!-- Tailwind CSS v3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style data-purpose="custom-font">
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
+<style data-purpose="colors">
+    /* Custom brand colors based on the FanBridge logo */
+    :root {
+      --fb-blue: #0052FF;
+      --fb-light-blue: #F0F5FF;
+      --fb-text-dark: #111827;
+      --fb-text-muted: #6B7280;
+      --fb-success-bg: #D1FAE5;
+      --fb-success-text: #059669;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+<!-- BEGIN: NavigationHeader -->
+<header class="flex items-center justify-between px-6 py-4">
+<!-- Back Button -->
+<button aria-label="Go back" class="text-blue-600 hover:opacity-70 transition-opacity" type="button">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Cancel Action -->
+
+</header>
+<!-- END: NavigationHeader -->
+<main class="px-6 pb-12">
+<!-- BEGIN: BrandLogo -->
+<div class="flex flex-col items-center mt-4 mb-8" data-purpose="brand-identity">
+<div class="flex items-center space-x-2">
+<!-- Recreating the 'F' logo icon and text -->
+<svg class="h-10 w-10" fill="none" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<path d="M20 30 C20 20, 80 20, 80 20 L70 40 C70 40, 35 40, 35 40 L30 55 L65 55 L55 70 L25 70 L15 90" stroke="#0052FF" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></path>
+</svg>
+<span class="text-3xl font-bold tracking-tight text-[#0a1b3d]">fanBridge</span>
+</div>
+</div>
+<!-- END: BrandLogo -->
+<!-- BEGIN: PageTitleSection -->
+<div class="text-center mb-10" data-purpose="screen-title">
+<h1 class="text-2xl font-bold text-gray-900 mb-3">Import Existing Wallet</h1>
+<p class="text-gray-500 leading-relaxed max-w-[280px] mx-auto">
+        Import your wallet using a recovery phrase or private key.
+      </p>
+</div>
+<!-- END: PageTitleSection -->
+<!-- BEGIN: SelectionOptions -->
+<div class="space-y-4" data-purpose="import-method-selection">
+<!-- Option 1: Recovery Phrase -->
+<button class="w-full flex items-center p-5 border border-gray-100 rounded-2xl shadow-sm text-left hover:bg-gray-50 transition-colors group" type="button">
+<div class="w-14 h-14 rounded-xl bg-[#444CFF] flex items-center justify-center flex-shrink-0">
+<!-- List Icon -->
+<svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 6h16M4 10h16M4 14h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="ml-4 flex-grow">
+<div class="flex items-center">
+<span class="font-bold text-gray-900 text-lg">Recovery Phrase</span>
+<span class="ml-2 px-2 py-0.5 bg-[#E6F8F0] text-[#10B981] text-[10px] font-bold rounded-md">Recommended</span>
+</div>
+<p class="text-gray-500 text-sm mt-1 leading-snug">
+            Import using your 12 or 24-word recovery phrase.
+          </p>
+</div>
+<div class="ml-2 text-gray-400 group-hover:text-blue-600 transition-colors">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</button>
+<!-- Option 2: Private Key -->
+<button class="w-full flex items-center p-5 border border-gray-100 rounded-2xl shadow-sm text-left hover:bg-gray-50 transition-colors group" type="button">
+<div class="w-14 h-14 rounded-xl bg-blue-600 flex items-center justify-center flex-shrink-0">
+<!-- Key Icon -->
+<svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="ml-4 flex-grow">
+<span class="font-bold text-gray-900 text-lg">Private Key</span>
+<p class="text-gray-500 text-sm mt-1 leading-snug">
+            Import using your wallet's private key.
+          </p>
+</div>
+<div class="ml-2 text-gray-400 group-hover:text-blue-600 transition-colors">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</button>
+</div>
+<!-- END: SelectionOptions -->
+<!-- BEGIN: SecurityMessage -->
+<div class="mt-16 bg-[#F5F8FF] rounded-2xl p-6 flex items-start space-x-4" data-purpose="security-disclaimer">
+<div class="flex-shrink-0 mt-1">
+<div class="w-10 h-10 rounded-full border-2 border-blue-600 flex items-center justify-center">
+<!-- Shield Icon -->
+<svg class="h-5 w-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04k0 000 8.016c0 5.338 3.539 10.103 8.53 11.666a11.709 11.709 0 008.53-11.666z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+<div>
+<p class="font-bold text-gray-900 text-sm mb-1">Your keys stay on your device</p>
+<p class="text-gray-500 text-sm leading-relaxed">
+          We never see or store your recovery phrase or private key.
+        </p>
+</div>
+</div>
+<!-- END: SecurityMessage -->
+<!-- BEGIN: HelpLink -->
+<div class="mt-20 text-center">
+<a class="text-blue-600 font-semibold text-sm hover:underline" href="#">
+        Need help? Learn more
+      </a>
+</div>
+<!-- END: HelpLink -->
+</main>
+
+
+</body></html>
+
+<!-- FanBridge Import Recovery Phrase Screen -->
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Import with Recovery Phrase - FanBridge</title>
+<!-- Tailwind CSS v3 CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'fanbridge-blue': '#0052FF',
+            'fanbridge-light-blue': '#E8EFFF',
+            'warning-bg': '#FFF8E6',
+            'warning-border': '#FFD580',
+            'warning-text': '#5C4300',
+          }
+        }
+      }
+    }
+  </script>
+<!-- General Layout Styles -->
+<style data-purpose="layout-styles">
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #FFFFFF;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .custom-shadow {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen bg-white text-gray-900">
+<!-- BEGIN: MainHeader -->
+<header class="px-4 py-4 flex items-center justify-between">
+<button aria-label="Go back" class="p-2" data-purpose="back-button">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</header>
+<!-- END: MainHeader -->
+<main class="flex-grow flex flex-col px-6">
+<!-- BEGIN: ProgressIndicator -->
+
+<!-- END: ProgressIndicator -->
+<!-- BEGIN: PageTitles -->
+<div class="text-center mb-8">
+<h1 class="text-2xl font-bold mb-3">Import with Recovery Phrase</h1>
+<p class="text-gray-600 px-4">
+        Enter your 12 or 24-word recovery phrase in the correct order.
+      </p>
+</div>
+<!-- END: PageTitles -->
+<!-- BEGIN: RecoveryInputSection -->
+<div class="relative mb-6">
+<textarea class="w-full h-48 p-4 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-fanbridge-blue focus:border-transparent resize-none text-gray-800 placeholder-gray-400" data-purpose="recovery-phrase-input" placeholder="Type or paste your recovery phrase..."></textarea>
+<!-- Scan/Expand Icon -->
+<div class="absolute bottom-4 right-4 text-gray-400" data-purpose="input-action-icon">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<!-- Paste Button -->
+<div class="flex justify-center mb-8">
+<button class="flex items-center gap-2 px-6 py-3 border border-gray-200 rounded-xl font-medium text-fanbridge-blue bg-white custom-shadow active:scale-95 transition-transform" data-purpose="paste-button">
+<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+        Paste from Clipboard
+      </button>
+</div>
+<!-- END: RecoveryInputSection -->
+<!-- BEGIN: WarningBox -->
+<div class="bg-warning-bg rounded-2xl p-4 flex gap-4 mb-10" data-purpose="security-warning">
+<div class="flex-shrink-0 pt-1">
+<svg class="h-6 w-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<p class="text-sm text-warning-text leading-tight">
+        Make sure no one is watching your screen. Anyone with your recovery phrase can control your wallet.
+      </p>
+</div>
+<!-- END: WarningBox -->
+</main>
+<!-- BEGIN: StickyFooterActions -->
+<footer class="px-6 pb-10 flex flex-col gap-6">
+<button class="w-full bg-fanbridge-blue text-white font-bold py-4 rounded-2xl active:opacity-90 transition-opacity" data-purpose="continue-button">
+      Continue
+    </button>
+<button class="w-full text-fanbridge-blue font-semibold text-center" data-purpose="alternative-import-method">
+      Use Private Key instead
+    </button>
+</footer>
+<!-- END: StickyFooterActions -->
+
+
+</body></html>
+
+<!-- FanBridge Import Private Key Screen -->
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>Import with Private Key</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandBlue: '#0047FF', // FanBridge signature blue
+            brandGray: {
+              50: '#F8FAFC',
+              100: '#F1F5F9',
+              200: '#E2E8F0',
+              400: '#94A3B8',
+              600: '#475569',
+              900: '#0F172A',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-layout">
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: #FFFFFF;
+    }
+    /* Ensure the main container fills the viewport for mobile feel */
+    .mobile-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    /* Hide scrollbar for clean UI */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-white text-brandGray-900">
+<!-- BEGIN: MainContainer -->
+<main class="mobile-container max-w-md mx-auto relative px-6 py-4 flex flex-col">
+<!-- BEGIN: NavigationHeader -->
+<header class="flex items-center justify-between mb-8" data-purpose="top-navigation">
+<button aria-label="Back" class="p-2 -ml-2">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<div class="flex-grow"></div>
+</header>
+<!-- END: NavigationHeader -->
+<!-- BEGIN: StepIndicator -->
+
+<!-- END: StepIndicator -->
+<!-- BEGIN: ContentArea -->
+<section class="flex-grow">
+<h1 class="text-2xl font-bold text-center mb-2">Import with Private Key</h1>
+<p class="text-brandGray-600 text-center mb-8">Enter your wallet's private key.</p>
+<!-- Private Key Input Field -->
+<div class="relative mb-6" data-purpose="input-container">
+<textarea class="w-full h-40 p-4 pt-4 pr-12 rounded-2xl border border-brandGray-200 bg-white focus:ring-2 focus:ring-brandBlue focus:border-transparent resize-none text-brandGray-900 placeholder-brandGray-400 text-base align-top" id="private-key-input" placeholder="Enter your private key..." rows="5"></textarea>
+<!-- Visibility Toggle Icon -->
+<button class="absolute top-4 right-4 text-brandGray-400" id="toggle-visibility">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<!-- Info Box -->
+<div class="bg-blue-50 rounded-2xl p-4 flex gap-3 items-start" data-purpose="info-callout">
+<div class="mt-0.5">
+<svg class="h-5 w-5 text-brandBlue" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<p class="text-sm text-brandGray-600 leading-relaxed">
+          Your private key is a long string of letters and numbers (usually starts with 0x...).
+        </p>
+</div>
+</section>
+<!-- END: ContentArea -->
+<!-- BEGIN: FooterActions -->
+<footer class="mt-auto py-4 space-y-4" data-purpose="navigation-footer">
+<button class="w-full py-4 bg-brandBlue text-white font-semibold rounded-2xl shadow-sm active:scale-[0.98] transition-transform" data-purpose="primary-action">
+        Continue
+      </button>
+<button class="w-full py-2 text-brandBlue font-medium text-center active:opacity-70 transition-opacity" data-purpose="secondary-action">
+        Use Recovery Phrase instead
+      </button>
+</footer>
+<!-- END: FooterActions -->
+</main>
+<!-- END: MainContainer -->
+<script data-purpose="input-behavior">
+    // Minimal interaction logic for UI demonstration
+    const toggleBtn = document.getElementById('toggle-visibility');
+    const inputField = document.getElementById('private-key-input');
+    
+    // In a real app, this would toggle type="password" vs "text", 
+    // but textareas don't support "password" type natively. 
+    // Usually a custom obfuscated font or overlay is used for textareas if needed.
+    toggleBtn.addEventListener('click', () => {
+      // Logic for UI state change would go here
+      console.log('Toggle visibility clicked');
+    });
+  </script>
+
+
+</body></html>
+
+<!-- FanBridge Wallet Confirmation Screen -->
+<!DOCTYPE html><html lang="en" style="width: 390px; height: 850px; overflow: hidden; position: relative;"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Confirm Your Wallet - FanBridge</title>
+<!-- Tailwind CSS v3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#0052FF',
+              lightBlue: '#F0F5FF',
+              textGray: '#64748B',
+              border: '#E2E8F0',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="typography">
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" data-snapdom="injected-import"></head>
+<body class="bg-white text-slate-900 min-h-screen flex flex-col">
+<!-- BEGIN: NavigationHeader -->
+<header class="p-4 flex items-center" data-purpose="header">
+<button aria-label="Go back" class="p-2 -ml-2 text-slate-900">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<polyline points="15 18 9 12 15 6"></polyline>
+</svg>
+</button>
+</header>
+<!-- END: NavigationHeader -->
+<main class="flex-1 px-6 pb-12 flex flex-col">
+<!-- BEGIN: ProgressIndicator -->
+
+<!-- END: ProgressIndicator -->
+<!-- BEGIN: TitleSection -->
+<div class="text-center mb-6">
+<h1 class="text-2xl font-bold mb-3">Confirm Your Wallet</h1>
+<p class="text-brand-textGray text-base leading-relaxed px-4">
+        Review your wallet details before completing the import.
+      </p>
+</div>
+<!-- END: TitleSection -->
+<!-- BEGIN: WalletIllustration -->
+<div class="relative flex justify-center py-10 mb-4" data-purpose="hero-illustration">
+<!-- Background Glow/Sparkles -->
+<div class="absolute inset-0 flex items-center justify-center opacity-40">
+
+</div>
+<!-- Central Wallet Image -->
+<div class="relative z-10 w-full max-w-[240px]">
+
+</div>
+</div>
+<!-- END: WalletIllustration -->
+<!-- BEGIN: DetailsCards -->
+<div class="space-y-4 mb-8" data-purpose="wallet-details-form">
+<!-- Wallet Address Section -->
+<div class="p-4 rounded-2xl border border-brand-border bg-white shadow-sm">
+<label class="block text-xs font-medium text-brand-textGray mb-1">Wallet Address</label>
+<div class="flex items-center justify-between">
+<span class="text-lg font-semibold tracking-tight">0x7a3F...a8D4...9fE2</span>
+<button aria-label="Copy address" class="p-2 text-brand-blue">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+<rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect>
+<path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Network Selector Section -->
+<button class="w-full p-4 rounded-2xl border border-brand-border bg-white shadow-sm flex items-center gap-4 text-left">
+<div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center overflow-hidden">
+<!-- Ethereum Icon Placeholder -->
+<svg height="24" viewBox="0 0 784 1277" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M392.07 0l-7.577 25.751v854.439l7.577 7.56 392.063-231.648z" fill="#343434"></path>
+<path d="M392.07 0L0 656.096l392.07 231.654V0z" fill="#8C8C8C"></path>
+<path d="M392.07 950.544l-4.263 5.21v321.408l4.263 12.433 392.392-553.619z" fill="#3C3C3B"></path>
+<path d="M392.07 1289.595V950.544L0 735.972l392.07 553.623z" fill="#8C8C8C"></path>
+<path d="M392.07 887.734l392.063-231.644-392.063-179.083z" fill="#141414"></path>
+<path d="M0 656.09l392.07 231.644V477.007z" fill="#393939"></path>
+</svg>
+</div>
+<div class="flex-1">
+<p class="text-xs font-medium text-brand-textGray uppercase tracking-wider">Network</p>
+<p class="text-base font-semibold">Ethereum Mainnet</p>
+</div>
+<svg class="text-slate-400" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</button>
+<!-- Success Info Box -->
+<div class="p-4 rounded-2xl bg-brand-lightBlue flex items-start gap-4" data-purpose="success-message">
+<div class="mt-1 flex-shrink-0">
+<div class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-brand-blue">
+<svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+<rect height="11" rx="2" ry="2" width="18" x="3" y="11"></rect>
+<path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+</svg>
+</div>
+</div>
+<p class="text-slate-700 text-sm leading-relaxed font-medium">
+          Your wallet has been imported successfully and is ready to use.
+        </p>
+</div>
+</div>
+<!-- END: DetailsCards -->
+<!-- BEGIN: ActionButtons -->
+<div class="mt-auto pt-4 flex flex-col gap-4" data-purpose="footer-actions">
+<button class="w-full bg-brand-blue hover:bg-blue-700 text-white font-bold py-5 rounded-2xl transition-colors shadow-lg shadow-blue-200">
+        Import Wallet
+      </button>
+<button class="w-full py-2 text-brand-blue font-semibold text-center hover:underline">
+        Go Back
+      </button>
+</div>
+<!-- END: ActionButtons -->
+</main>
+
+
+
+
+</body></html>
