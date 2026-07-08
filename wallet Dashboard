@@ -1,0 +1,694 @@
+<!-- FanBridge Wallet Assets Screen -->
+<!DOCTYPE html><html class="light" lang="en" style="width: 390px; height: 884px; overflow: hidden; position: relative;"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>fanBridge | Wallet</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#9e3300",
+                        "on-tertiary-container": "#fff2ee",
+                        "inverse-surface": "#283044",
+                        "secondary-fixed-dim": "#41dfa5",
+                        "on-tertiary-fixed": "#380d00",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#dae2fd",
+                        "surface": "#faf8ff",
+                        "surface-container-highest": "#dae2fd",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#b5c4ff",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#64fcbf",
+                        "surface-dim": "#d2d9f4",
+                        "tertiary-container": "#c74200",
+                        "on-secondary-fixed": "#002114",
+                        "on-primary-fixed-variant": "#003bae",
+                        "surface-tint": "#0050e3",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb59b",
+                        "surface-bright": "#faf8ff",
+                        "on-primary-fixed": "#00164e",
+                        "on-primary-container": "#f4f3ff",
+                        "on-background": "#131b2e",
+                        "on-secondary-container": "#007350",
+                        "primary-fixed-dim": "#b5c4ff",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#64fcbf",
+                        "primary": "#004ad3",
+                        "surface-container": "#eaedff",
+                        "primary-container": "#1d61ff",
+                        "on-surface-variant": "#434656",
+                        "on-tertiary-fixed-variant": "#822800",
+                        "outline": "#737687",
+                        "on-surface": "#131b2e",
+                        "on-secondary-fixed-variant": "#005138",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#dce1ff",
+                        "secondary": "#006c4b",
+                        "surface-container-low": "#f2f3ff",
+                        "background": "#faf8ff",
+                        "outline-variant": "#c3c5d9",
+                        "surface-container-high": "#e2e7ff",
+                        "inverse-on-surface": "#eef0ff",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#ffdbcf"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "8px",
+                        "md": "16px",
+                        "margin-mobile": "20px",
+                        "xl": "32px",
+                        "gutter": "16px",
+                        "base": "4px",
+                        "sm": "12px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "500" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .wallet-gradient {
+            background: linear-gradient(135deg, #0050e3 0%, #1d61ff 100%);
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 bg-background/80 backdrop-blur-md flex justify-between items-center w-full px-margin-mobile py-xs max-w-7xl mx-auto transition-all">
+<div class="flex items-center gap-xs">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[20px]" style="font-variation-settings: 'FILL' 1;">fluid_med</span>
+</div>
+<h1 class="text-headline-md font-headline-md font-bold text-primary">fanBridge</h1>
+</div>
+<div class="flex items-center gap-md">
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-100 text-outline">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+</button>
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-100 text-outline">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<main class="px-margin-mobile mt-xs space-y-xl">
+<!-- Wallet Hero Card -->
+<section class="wallet-gradient rounded-[24px] p-lg text-white relative overflow-hidden shadow-lg">
+<!-- Decorative logo mark -->
+<div class="absolute -right-8 -bottom-8 opacity-10">
+<span class="material-symbols-outlined text-[180px]">fluid_med</span>
+</div>
+<div class="flex justify-between items-start mb-md">
+<div class="space-y-1">
+<div class="flex items-center gap-xs opacity-90">
+<span class="font-body-lg text-body-lg">My Wallet</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</div>
+<div class="flex items-center gap-xs opacity-70">
+<span class="text-label-sm font-label-sm tracking-widest">0x7a3F...9fE2</span>
+<span class="material-symbols-outlined text-[14px] cursor-pointer">content_copy</span>
+</div>
+</div>
+<button class="p-xs hover:opacity-80 transition-opacity active:scale-95 duration-100">
+<span class="material-symbols-outlined text-white">visibility</span>
+</button>
+</div>
+<div class="space-y-xs mt-lg">
+<div class="flex items-center gap-xs opacity-80">
+<span class="text-label-sm font-label-sm">Total Balance</span>
+<span class="material-symbols-outlined text-[14px]">info</span>
+</div>
+<h2 class="text-display-lg-mobile font-display-lg-mobile">$2,456.89</h2>
+<div class="flex items-center gap-xs text-[#41dfa5] font-semibold">
+<span class="material-symbols-outlined text-[18px]">trending_up</span>
+<span class="text-body-md font-body-md">+$123.45 (5.28%)</span>
+<span class="text-label-sm font-label-sm opacity-70 ml-xs">Today</span>
+</div>
+</div>
+</section>
+<!-- Action Grid -->
+<section class="grid grid-cols-4 gap-gutter"><button class="flex flex-col items-center gap-xs group">
+<div class="w-14 h-14 bg-surface-container-lowest border border-outline-variant rounded-full flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined text-[28px]">north_east</span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface">Send</span>
+</button>
+<button class="flex flex-col items-center gap-xs group">
+<div class="w-14 h-14 bg-surface-container-lowest border border-outline-variant rounded-full flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined text-[28px]">south_west</span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface">Receive</span>
+</button>
+<button class="flex flex-col items-center gap-xs group">
+<div class="w-14 h-14 bg-surface-container-lowest border border-outline-variant rounded-full flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined text-[28px]">swap_horiz</span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface">Swap</span>
+</button>
+<button class="flex flex-col items-center gap-xs group"><div class="w-14 h-14 bg-surface-container-lowest border border-outline-variant rounded-full flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-white transition-all duration-300"><span class="material-symbols-outlined text-[28px]">grid_view</span></div><span class="text-label-sm font-label-sm text-on-surface">Assets</span></button></section>
+<!-- Assets List -->
+<section class="space-y-md">
+<div class="flex justify-between items-end space-y-md">
+<h3 class="text-headline-md font-headline-md text-on-surface">Your Assets</h3>
+<a class="text-primary font-bold text-label-sm" href="#">View All</a>
+</div>
+<div class="rounded-xl border-outline-variant space-y-md">
+<!-- Asset Item: Ethereum -->
+<div class="flex items-center justify-between p-md bg-surface-container-lowest rounded-xl shadow-lg hover:bg-surface-container-low transition-all cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-[#627EEA]/10 flex items-center justify-center">
+<img alt="ETH" class="w-6 h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpd1vsOmGoZNScDjvEJxN08m5KMXEOoo05O-mHYIP5745HOxsF58ehUB2hD8STc8jOgaaDnOgdM-kuGXO9q6b_PQ5YCpG3MlpYAwDVWitCH2LVtdPZlO5C2nOlXkea0hDHepGPunehb8RjwmZ2MekRcVilkf7b8PUKE2vxKBAoUlvu0DZ16y5WOgIdQsh4JY65Yx2heBYzg8umYBeJXLBJ7_R4yUkyVVhosJ01o2vA5euIEY9Opbto">
+</div>
+<div>
+<p class="font-semibold text-on-surface text-body-md">Ethereum</p>
+<p class="text-label-sm text-on-surface-variant"><span class="text-[10px] leading-[14px]">ETH</span></p>
+</div>
+</div>
+<div class="flex-1 px-lg hidden sm:block">
+<svg class="w-24 h-8 text-secondary" preserveAspectRatio="none" viewBox="0 0 100 30">
+<path d="M0,25 Q10,15 20,20 T40,10 T60,22 T80,8 T100,18" fill="none" stroke="currentColor" stroke-width="2" style="stroke-dasharray: 173.796; stroke-dashoffset: 0; transition: stroke-dashoffset 1.5s ease-out;"></path>
+</svg>
+</div>
+<div class="text-right">
+<p class="font-semibold text-on-surface text-body-md">1.2467 ETH</p>
+<p class="text-label-sm text-on-surface-variant"><span class="text-[10px] leading-[14px]">$1,892.45</span></p>
+</div>
+</div>
+<!-- Asset Item: USD Coin -->
+<div class="flex items-center justify-between p-md bg-surface-container-lowest rounded-xl shadow-lg hover:bg-surface-container-low transition-all cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-[#2775CA]/10 flex items-center justify-center">
+<img alt="USDC" class="w-6 h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw7xOpBJd8WmEa1UdIZdanAaD9AuGKi9iizdDIniDaQLkRKym5ZS93nUJbgg-5RNTIpIVFyBWMRLi3uNy5gzMzDwcy3uYW_uZqHhHUEP0-o4mRpbeH1rdToe4jSD7wSPxLy3JsuTMEcLVlOIHWQ-7trXZTtV8aCzu_qGwwigk8loMO5za4W8a8ej-lx17NIsR4wdKrMsQp-aYcwrQf9QGP7g_Pr413zxl39BwCDFN6AlY61_t71zLJ">
+</div>
+<div>
+<p class="font-semibold text-on-surface text-body-md">USD Coin</p>
+<p class="text-label-sm text-on-surface-variant"><span class="text-[10px] leading-[14px]">USDC</span></p>
+</div>
+</div>
+<div class="flex-1 px-lg hidden sm:block">
+<svg class="w-24 h-8 text-secondary" preserveAspectRatio="none" viewBox="0 0 100 30">
+<path d="M0,15 Q25,14 50,16 T100,15" fill="none" stroke="currentColor" stroke-width="2" style="stroke-dasharray: 100.133; stroke-dashoffset: 0; transition: stroke-dashoffset 1.5s ease-out;"></path>
+</svg>
+</div>
+<div class="text-right">
+<p class="font-semibold text-on-surface text-body-md">320.50 USDC</p>
+<p class="text-label-sm text-on-surface-variant"><span class="text-[10px] leading-[14px]">$320.50</span></p>
+</div>
+</div>
+<!-- Asset Item: fanToken -->
+<div class="flex items-center justify-between p-md bg-surface-container-lowest rounded-xl shadow-lg hover:bg-surface-container-low transition-all cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[24px]" style="font-variation-settings: 'FILL' 1;">fluid_med</span>
+</div>
+<div>
+<p class="font-semibold text-on-surface text-body-md">fanToken</p>
+<p class="text-label-sm text-on-surface-variant"><span class="text-[10px] leading-[14px]">FAN</span></p>
+</div>
+</div>
+<div class="flex-1 px-lg hidden sm:block">
+<svg class="w-24 h-8 text-secondary" preserveAspectRatio="none" viewBox="0 0 100 30">
+<path d="M0,28 L10,22 L20,25 L35,10 L50,15 L70,5 L100,12" fill="none" stroke="currentColor" stroke-width="2" style="stroke-dasharray: 112.293; stroke-dashoffset: 0; transition: stroke-dashoffset 1.5s ease-out;"></path>
+</svg>
+</div>
+<div class="text-right">
+<p class="font-semibold text-on-surface text-body-md">245.00 FAN</p>
+<p class="text-label-sm text-on-surface-variant"><span class="text-[10px] leading-[14px]">$122.50</span></p>
+</div>
+</div>
+<!-- Asset Item: BNB -->
+<div class="flex items-center justify-between p-md bg-surface-container-lowest rounded-xl shadow-lg hover:bg-surface-container-low transition-all cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-[#F3BA2F]/10 flex items-center justify-center">
+<img alt="BNB" class="w-6 h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMppT82Ar6uZHkIAjXQg7C3oizfQI4RWaB_e9z2o4VZUyg45qU0Jcn2swWkB4qvAwqzOjcYeTRtCV89IiI-LrUU54O_9-cqICRnN0CMZ56WhftdbBLIZ1kPfi4t_0_iZ_Xt53zzMnWPbHiDcHFacPgl5jAeMY3uXAc-ounEfGlj18ht76I7_HxC1rQmd8A80JrBwu6OmyvfoTakaX2m-xVhBc9A6qeIU2iONOqswP1KDbVveNQANXn">
+</div>
+<div>
+<p class="font-semibold text-on-surface text-body-md">BNB</p>
+<p class="text-label-sm text-on-surface-variant"><span class="text-[10px] leading-[14px]">BNB</span></p>
+</div>
+</div>
+<div class="flex-1 px-lg hidden sm:block">
+<svg class="w-24 h-8 text-error" preserveAspectRatio="none" viewBox="0 0 100 30">
+<path d="M0,5 L20,15 L40,12 L60,25 L80,20 L100,28" fill="none" stroke="currentColor" stroke-width="2" style="stroke-dasharray: 108.594; stroke-dashoffset: 0; transition: stroke-dashoffset 1.5s ease-out;"></path>
+</svg>
+</div>
+<div class="text-right">
+<p class="font-semibold text-on-surface text-body-md">0.1023 BNB</p>
+<p class="text-label-sm text-on-surface-variant"><span class="text-[10px] leading-[14px]">$121.44</span></p>
+</div>
+</div>
+<!-- View All Button -->
+<button class="w-full flex items-center justify-between p-md text-on-surface-variant bg-surface-container-lowest rounded-xl shadow-lg hover:bg-surface-container-low transition-all">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined">list</span>
+<span class="text-body-md">View All Assets</span>
+</div>
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-xs pb-md pt-xs bg-surface-container-lowest/90 backdrop-blur-xl border-t border-outline-variant shadow-lg">
+<a class="flex flex-col items-center justify-center text-primary font-bold scale-90 duration-200" href="#">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="text-label-sm font-label-sm mt-1">Wallet</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[28px]">history</span>
+<span class="text-label-sm font-label-sm mt-1">Activity</span>
+</a>
+<div class="relative -top-6">
+<button class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center shadow-lg active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[32px]">qr_code_scanner</span>
+</button>
+</div>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[28px]">explore</span>
+<span class="text-label-sm font-label-sm mt-1">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[28px]">person</span>
+<span class="text-label-sm font-label-sm mt-1">Profile</span>
+</a>
+</nav>
+<!-- Simple Sparkline Animation -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const paths = document.querySelectorAll('svg path');
+            paths.forEach((path, i) => {
+                const length = path.getTotalLength();
+                path.style.strokeDasharray = length;
+                path.style.strokeDashoffset = length;
+                setTimeout(() => {
+                    path.style.transition = 'stroke-dashoffset 1.5s ease-out';
+                    path.style.strokeDashoffset = '0';
+                }, i * 200);
+            });
+        });
+    </script>
+
+
+</body></html>
+
+<!-- FanBridge Wallet Dashboard -->
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>fanBridge - Wallet Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#64fcbf",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#eef0ff",
+                        "on-error-container": "#93000a",
+                        "on-background": "#131b2e",
+                        "outline": "#737687",
+                        "on-primary-container": "#f4f3ff",
+                        "surface-container-highest": "#dae2fd",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#1d61ff",
+                        "background": "#faf8ff",
+                        "on-tertiary-fixed": "#380d00",
+                        "on-primary-fixed-variant": "#003bae",
+                        "inverse-surface": "#283044",
+                        "tertiary": "#9e3300",
+                        "primary-fixed-dim": "#b5c4ff",
+                        "on-tertiary-fixed-variant": "#822800",
+                        "secondary-fixed": "#64fcbf",
+                        "on-surface": "#131b2e",
+                        "on-secondary-fixed": "#002114",
+                        "on-surface-variant": "#434656",
+                        "secondary": "#006c4b",
+                        "surface-container-low": "#f2f3ff",
+                        "surface-container-high": "#e2e7ff",
+                        "surface-container": "#eaedff",
+                        "tertiary-fixed-dim": "#ffb59b",
+                        "on-secondary-container": "#007350",
+                        "surface-tint": "#0050e3",
+                        "tertiary-fixed": "#ffdbcf",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#b5c4ff",
+                        "surface": "#faf8ff",
+                        "secondary-fixed-dim": "#41dfa5",
+                        "surface-variant": "#dae2fd",
+                        "on-tertiary-container": "#fff2ee",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#d2d9f4",
+                        "outline-variant": "#c3c5d9",
+                        "surface-bright": "#faf8ff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#004ad3",
+                        "on-primary-fixed": "#00164e",
+                        "on-secondary-fixed-variant": "#005138",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#dce1ff",
+                        "tertiary-container": "#c74200"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "sm": "12px",
+                        "lg": "24px",
+                        "xs": "8px",
+                        "gutter": "16px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "500"}],
+                        "display-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            user-select: none;
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+        }
+        .glass-blur {
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen pb-32">
+<!-- Top AppBar -->
+<header class="sticky top-0 z-50 bg-background/80 backdrop-blur-md">
+<div class="flex justify-between items-center w-full px-margin-mobile py-xs max-w-7xl mx-auto">
+<div class="flex items-center gap-xs">
+<span class="text-headline-md font-headline-md font-bold text-primary">fanBridge</span>
+</div>
+<div class="flex items-center gap-md">
+<button class="p-xs hover:opacity-80 transition-opacity active:scale-95 duration-100">
+<span class="material-symbols-outlined text-on-surface">qr_code_scanner</span>
+</button>
+<button class="p-xs hover:opacity-80 transition-opacity active:scale-95 duration-100">
+<span class="material-symbols-outlined text-on-surface">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-margin-mobile space-y-xl mt-md">
+<!-- Hero Card -->
+<section class="relative overflow-hidden hero-gradient rounded-xl p-lg text-white shadow-lg shadow-xl">
+<!-- Decorative Background Pattern (Minimalist representation of fanBridge 'F') -->
+<div class="absolute right-[-20px] bottom-[-20px] opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[240px]" style="font-variation-settings: 'wght' 700;">brand_family</span>
+</div>
+<div class="flex flex-col gap-lg relative z-10">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<div class="flex items-center gap-xs cursor-pointer hover:opacity-90 active:scale-95 transition-all">
+<span class="text-label-sm font-label-sm opacity-80">My Wallet</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</div>
+<div class="flex items-center gap-xs mt-xs">
+<span class="text-body-md font-body-md opacity-70">0x7a3F...9fE2</span>
+<button class="material-symbols-outlined text-[18px] opacity-70 hover:opacity-100">content_copy</button>
+</div>
+</div>
+<button class="material-symbols-outlined opacity-80">visibility</button>
+</div>
+<div class="flex flex-col gap-xs mt-md">
+<div class="flex items-center gap-xs">
+<span class="text-label-sm font-label-sm opacity-80 uppercase tracking-wider">Total Balance</span>
+<span class="material-symbols-outlined text-[14px] opacity-60">info</span>
+</div>
+<h1 class="text-display-lg-mobile font-display-lg-mobile md:text-display-lg md:font-display-lg tracking-tight">
+                        $2,456.89
+                    </h1>
+<div class="flex items-center gap-xs">
+<span class="text-secondary-container font-body-lg text-body-lg">+$123.45 (5.28%)</span>
+<span class="text-label-sm font-label-sm opacity-60">Today</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Actions Grid -->
+<section class="grid grid-cols-4 gap-sm">
+<button class="flex flex-col items-center gap-xs group">
+<div class="w-14 h-14 rounded-full bg-white border border-outline-variant flex items-center justify-center group-active:scale-90 transition-transform duration-200 shadow-sm">
+<span class="material-symbols-outlined text-primary">arrow_upward</span>
+</div>
+<div class="text-center">
+<p class="text-label-sm font-bold text-on-surface">Send</p>
+
+</div>
+</button>
+<button class="flex flex-col items-center gap-xs group">
+<div class="w-14 h-14 rounded-full bg-white border border-outline-variant flex items-center justify-center group-active:scale-90 transition-transform duration-200 shadow-sm">
+<span class="material-symbols-outlined text-primary">arrow_downward</span>
+</div>
+<div class="text-center">
+<p class="text-label-sm font-bold text-on-surface">Receive</p>
+
+</div>
+</button>
+<button class="flex flex-col items-center gap-xs group">
+<div class="w-14 h-14 rounded-full bg-white border border-outline-variant flex items-center justify-center group-active:scale-90 transition-transform duration-200 shadow-sm">
+<span class="material-symbols-outlined text-primary">swap_horiz</span>
+</div>
+<div class="text-center">
+<p class="text-label-sm font-bold text-on-surface">Swap</p>
+
+</div>
+</button>
+<button class="flex flex-col items-center gap-xs group">
+<div class="w-14 h-14 rounded-full bg-white border border-outline-variant flex items-center justify-center group-active:scale-90 transition-transform duration-200 shadow-sm">
+<span class="material-symbols-outlined text-primary">history</span>
+</div>
+<div class="text-center">
+<p class="text-label-sm font-bold text-on-surface">History</p>
+
+</div>
+</button>
+</section>
+<!-- Transaction History -->
+<section class="flex flex-col gap-md">
+<div class="flex justify-between items-center">
+<h2 class="text-body-lg font-bold text-on-surface">Transaction History</h2>
+<button class="text-primary font-body-md hover:underline bg-white rounded-xl shadow-sm text-label-sm">View All</button>
+</div>
+<div class="rounded-xl overflow-hidden flex flex-col gap-sm">
+<!-- List Item 1 -->
+<div class="flex items-center justify-between p-md last:border-0 hover:bg-surface-container-low transition-colors bg-white rounded-xl shadow-sm">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-secondary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">arrow_downward</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-lg text-on-surface text-body-md">Received</span>
+<span class="text-label-sm font-label-sm text-outline">From 0x2b9...6f3a</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-bold text-secondary text-body-md">+1.2500 ETH</span>
+<span class="text-label-sm font-label-sm text-outline">Today, 10:24 AM</span>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="flex items-center justify-between p-md last:border-0 hover:bg-surface-container-low transition-colors bg-white rounded-xl shadow-sm">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-primary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">arrow_upward</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-lg text-on-surface text-body-md">Sent</span>
+<span class="text-label-sm font-label-sm text-outline">To 0x8d2...7c1e</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-bold text-on-surface text-body-md">-0.5000 ETH</span>
+<span class="text-label-sm font-label-sm text-outline">Yesterday, 4:15 PM</span>
+</div>
+</div>
+<!-- List Item 3 -->
+<div class="flex items-center justify-between p-md last:border-0 hover:bg-surface-container-low transition-colors bg-white rounded-xl shadow-sm">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary">swap_horiz</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-lg text-on-surface text-body-md">Swapped</span>
+<span class="text-label-sm font-label-sm text-outline">ETH → USDC</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-bold text-on-surface text-body-md">-0.2500 ETH</span>
+<span class="text-label-sm font-label-sm text-outline">Yesterday, 1:32 PM</span>
+</div>
+</div>
+<!-- List Item 4 -->
+<div class="flex items-center justify-between p-md last:border-0 hover:bg-surface-container-low transition-colors bg-white rounded-xl shadow-sm">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-secondary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">arrow_downward</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-lg text-on-surface text-body-md">Received</span>
+<span class="text-label-sm font-label-sm text-outline">From 0x91a...3d7b</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-bold text-secondary text-body-md">+2.0000 USDC</span>
+<span class="text-label-sm font-label-sm text-outline">May 28, 9:08 AM</span>
+</div>
+</div>
+<!-- View All History CTA -->
+<button class="w-full p-md flex items-center justify-between hover:bg-surface-container-high transition-colors bg-white rounded-xl shadow-sm">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-outline">history</span>
+<span class="font-body-lg text-on-surface text-body-md">View All History</span>
+</div>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-xs pb-md pt-xs bg-surface-container-lowest border-t border-outline-variant shadow-lg rounded-t-xl">
+<!-- Wallet (Active) -->
+<button class="flex flex-col items-center justify-center text-primary font-bold group">
+<div class="relative flex flex-col items-center group-active:scale-90 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="text-label-sm font-label-sm">Wallet</span>
+</div>
+</button>
+<!-- Activity -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors group">
+<div class="relative flex flex-col items-center group-active:scale-90 duration-200">
+<span class="material-symbols-outlined">history</span>
+<span class="text-label-sm font-label-sm">Activity</span>
+</div>
+</button>
+<!-- FAB (QR Scan / Action) -->
+<button class="relative -top-6">
+<div class="w-14 h-14 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-xl hover:opacity-90 active:scale-95 duration-200">
+<span class="material-symbols-outlined text-[32px]">qr_code_scanner</span>
+</div>
+</button>
+<!-- Explore -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors group">
+<div class="relative flex flex-col items-center group-active:scale-90 duration-200">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-label-sm font-label-sm">Explore</span>
+</div>
+</button>
+<!-- Profile -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors group">
+<div class="relative flex flex-col items-center group-active:scale-90 duration-200">
+<span class="material-symbols-outlined">person</span>
+<span class="text-label-sm font-label-sm">Profile</span>
+</div>
+</button>
+</nav>
+<script>
+        // Simple micro-interaction for balance visibility
+        const visibilityBtn = document.querySelector('.hero-gradient button.material-symbols-outlined');
+        const balanceDisplay = document.querySelector('h1');
+        let isVisible = true;
+
+        visibilityBtn.addEventListener('click', () => {
+            isVisible = !isVisible;
+            if (isVisible) {
+                balanceDisplay.textContent = '$2,456.89';
+                visibilityBtn.textContent = 'visibility';
+            } else {
+                balanceDisplay.textContent = '••••••••';
+                visibilityBtn.textContent = 'visibility_off';
+            }
+        });
+
+        // Copy address simulation
+        const copyBtn = document.querySelector('button.material-symbols-outlined.opacity-70');
+        copyBtn.addEventListener('click', () => {
+            const originalText = copyBtn.textContent;
+            copyBtn.textContent = 'check';
+            setTimeout(() => {
+                copyBtn.textContent = originalText;
+            }, 1500);
+        });
+    </script>
+
+
+</body></html>
