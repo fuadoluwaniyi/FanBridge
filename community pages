@@ -1,0 +1,936 @@
+<!-- FanBridge Voice Rooms Screen -->
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Liverpool Global - Voice Rooms</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Inter font for Brand Style -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style data-purpose="typography">
+    body {
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+<style data-purpose="custom-layout">
+    /* Custom gradient for the live card */
+    .live-card-gradient {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    }
+    /* Hide scrollbar for tabs */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-slate-900">
+<!-- BEGIN: MainContainer -->
+<main class="max-w-md mx-auto bg-white min-h-screen flex flex-col shadow-sm">
+<!-- BEGIN: TopHeader -->
+<header class="pt-4 px-4 pb-2 bg-white" data-purpose="community-header">
+<div class="flex items-center justify-between">
+<!-- Left: Back & Community Info -->
+<div class="flex items-center space-x-3">
+<button aria-label="Back" class="p-1">
+<svg class="h-6 w-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<div class="relative">
+<img alt="Liverpool Global Logo" class="h-10 w-10 rounded-full object-cover border border-gray-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvHsoSG2aNlApc4sFMFL6LrCmWXLD1g5UIAfEEEDeQIuOfvqw6vai9bfsds98tLil9vcsrwMgtvl_-Horv5ZcMJ6HL4g9O7cG-P3d0pgDYN6xiZ_v5b7HdS2yNS5c6li-7trsdHms57rFj6yUWGy2N1LFuq8LR0b_7GB0mDgTSZP29MqXRKMcig7D_W2l5sZ3IDtlN-81nDE90temYgLHvzeiJ7nMRkB1zUxdYFntBI9LmFmBz7hXLNt4f2d_eWQoerg">
+<span class="absolute bottom-0 right-0 h-3 w-3 bg-green-500 border-2 border-white rounded-full"></span>
+</div>
+<div>
+<h1 class="text-base font-bold leading-tight">Liverpool Global</h1>
+<p class="text-xs text-slate-500 flex items-center">
+              12.4K members <span class="mx-1">•</span> Public
+            </p>
+</div>
+</div>
+<!-- Right: Actions -->
+<div class="flex items-center space-x-4">
+<button aria-label="Notifications" class="text-slate-600">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<button aria-label="More Options" class="text-slate-600">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+</header>
+<!-- END: TopHeader -->
+<!-- BEGIN: NavigationTabs -->
+<nav class="border-b border-gray-100 px-4" data-purpose="tab-navigation">
+<div class="flex items-center space-x-6 overflow-x-auto no-scrollbar py-2 text-sm font-medium">
+<a class="text-slate-500 py-2 whitespace-nowrap" href="#">Chat</a>
+<a class="text-blue-600 border-b-2 border-blue-600 py-2 whitespace-nowrap" href="#">Voice Rooms</a>
+<a class="text-slate-500 py-2 whitespace-nowrap" href="#">Events</a>
+<a class="text-slate-500 py-2 whitespace-nowrap" href="#">About</a>
+</div>
+</nav>
+<!-- END: NavigationTabs -->
+<!-- BEGIN: MainContent -->
+<div class="flex-1 overflow-y-auto px-4 py-6 space-y-8" data-purpose="main-scroll-area">
+<!-- BEGIN: LiveNowSection -->
+<section>
+<h2 class="text-lg font-bold mb-4">Live Now</h2>
+<div class="live-card-gradient rounded-3xl p-5 text-white shadow-lg" data-purpose="live-room-card">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-xl font-bold">Match Talk Live</h3>
+<span class="bg-red-600 text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center tracking-wider">
+              LIVE
+            </span>
+</div>
+<p class="text-slate-300 text-sm mb-6">Discussing: Liverpool vs Man City</p>
+<!-- Avatar Stack -->
+<div class="flex items-center mb-8">
+<div class="flex -space-x-2">
+<img alt="User 1" class="inline-block h-8 w-8 rounded-full ring-2 ring-indigo-900 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrXnabz8fbODKAV26_O7OPx4tPRq-xQjgD9WN1OtV2rg0KlC411bb-W3WMEVXSwb1bmcbjBLHcmJqWyqlC0ZUReJKkaYXTteapxts_XTHYHteJIENAIXOUGpJBVV9t5Fx43DjkMRRdKsS1eh0qnRAGvBv4nrks3CaLc3wolnK4_bZDGkCAz-3NlRBj5QgsgJm9YMxCV0lQqm2Wmes9nOI5ilJvn4XawDP_ziYSwsG_ZdoLkJ8SqULe">
+<img alt="User 2" class="inline-block h-8 w-8 rounded-full ring-2 ring-indigo-900 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPvj0_-NP-8Ae8KBN5zDqlwippF7mqRQipHs2Z64KHocHC7eBdyq4HIG-UpEe0IClnXRyt6010uk59dASzRxS_cDWvbrTa8xV16w6h5lI-PrySbbsmIDuAYzaW_T3KJ0VfD_q60NDD81iY5tGdvX-W-LmkA6EQtl-mgPRLDhpDGEgn-Bp7RjHkxznmCW4k4fNVZZkK6MyxfFygn57V3_8IJzydmhnywW3iJmqDrgCib-onAEMN3DJg">
+<img alt="User 3" class="inline-block h-8 w-8 rounded-full ring-2 ring-indigo-900 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnisv1rT-mj-fCW9Mz85-aW7eNE--pk2cGZrDQMt2uim7fik3WOZThDZ2Yc1mwGrUd-9bzHW0y20e1iq_9Ex94_ZvT_WwY1psNB20dyK_F2RTHrzSCdM7b7pjwRGWHFJjZo9tEFq7E2s9bZjqISJrRNt_ac2QE7pny3YcR8LBTf7GNITtgPiBL-WFqzi43JD8dNEGrZEigjGnlFwr_gTJYmyOEJJMMT_B2AEIBp8TOqwR6SInv5DP3">
+<img alt="User 4" class="inline-block h-8 w-8 rounded-full ring-2 ring-indigo-900 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzWmK-NdQs76LXXyLy39_iDOfPjMjFuXN0EaAS6sxeUl4GsVBNU__hu8ofHgr8WyM-qTwxDqisiNTxlHrZNFN0IUu3gV5qqlekl0Y3vmUMMk9uSNtb93btkal96bMOPSgWzDs_2kKuKlkeHyHKXNeHBcQKpxB9B30AmwClr0BaXD6TN62m5rvvHYSmwvUAWVLRlXBHbcWl51g3I3Yv1mAjpab2sSYe5sQ2xZWDyZVHaZF7s9enUQoP">
+<img alt="User 5" class="inline-block h-8 w-8 rounded-full ring-2 ring-indigo-900 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp0ccwrZluBcz07ryez1Nixt-Djb3QgKI9n5eY8KSEaGoBIj3YW04dMCdwFK0X92oJPBIxrYfDup7TCFwAwrs8AWZ0ZEVTP_CLN6_sksTsY2JXY652qU-vG63SvxOaVO9IaI_gi6QgeQg6_0946anBZ54Dyb8rbxeqH9y_fdl98cEMCRU8qPVpIJlXZeuSvFAg-oIP3HlCxARO3QX4h2yH6LxhMe5dQTwDeQWVM-8674fOYUO4TSC2">
+</div>
+<span class="ml-3 text-sm font-medium text-slate-300">+48</span>
+</div>
+<!-- Card Footer Action -->
+<div class="flex items-center justify-between">
+<button class="bg-blue-600 hover:bg-blue-700 transition-colors text-white text-sm font-semibold py-3 px-10 rounded-xl">
+              Join Room
+            </button>
+<div class="flex items-center space-x-2 text-slate-300">
+<span class="text-sm font-semibold">128</span>
+<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A10.003 10.003 0 0012 3m0 0a10.003 10.003 0 015.44 15.44l.054.09m-3.44 2.04C13.009 17.799 12 14.517 12 11z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+</div>
+</section>
+<!-- END: LiveNowSection -->
+<!-- BEGIN: UpcomingRoomsSection -->
+<section>
+<h2 class="text-lg font-bold mb-4">Upcoming Rooms</h2>
+<div class="space-y-4">
+<!-- Room Item 1 -->
+<div class="bg-white border border-gray-100 rounded-2xl p-4 flex items-center justify-between shadow-sm" data-purpose="upcoming-room-item">
+<div class="flex items-center space-x-4">
+<div class="h-14 w-14 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div>
+<h4 class="font-bold text-sm">Pre-Match Preview</h4>
+<p class="text-xs text-slate-400 mt-0.5">Today, 2:00 PM</p>
+<p class="text-xs text-blue-600 font-medium mt-1">Host: Alex Morgan</p>
+</div>
+</div>
+<button class="bg-slate-50 text-blue-600 text-xs font-bold px-4 py-2 rounded-lg border border-gray-100">
+              Set Reminder
+            </button>
+</div>
+<!-- Room Item 2 -->
+<div class="bg-white border border-gray-100 rounded-2xl p-4 flex items-center justify-between shadow-sm" data-purpose="upcoming-room-item">
+<div class="flex items-center space-x-4">
+<div class="h-14 w-14 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div>
+<h4 class="font-bold text-sm">Tactics &amp; Analysis</h4>
+<p class="text-xs text-slate-400 mt-0.5">Tomorrow, 7:00 PM</p>
+<p class="text-xs text-blue-600 font-medium mt-1">Host: Carlos</p>
+</div>
+</div>
+<button class="bg-slate-50 text-blue-600 text-xs font-bold px-4 py-2 rounded-lg border border-gray-100">
+              Set Reminder
+            </button>
+</div>
+<!-- Room Item 3 -->
+<div class="bg-white border border-gray-100 rounded-2xl p-4 flex items-center justify-between shadow-sm" data-purpose="upcoming-room-item">
+<div class="flex items-center space-x-4">
+<div class="h-14 w-14 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div>
+<h4 class="font-bold text-sm">Legends Talk</h4>
+<p class="text-xs text-slate-400 mt-0.5">Jun 10, 6:00 PM</p>
+<p class="text-xs text-blue-600 font-medium mt-1">Host: Emma Wilson</p>
+</div>
+</div>
+<button class="bg-slate-50 text-blue-600 text-xs font-bold px-4 py-2 rounded-lg border border-gray-100">
+              Set Reminder
+            </button>
+</div>
+</div>
+</section>
+<!-- END: UpcomingRoomsSection -->
+</div>
+<!-- END: MainContent -->
+</main>
+<!-- END: MainContainer -->
+</body></html>
+
+<!-- FanBridge Live Voice Room Interface -->
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Live Voice Room</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#00164e",
+                        "surface-dim": "#d2d9f4",
+                        "inverse-on-surface": "#eef0ff",
+                        "inverse-surface": "#283044",
+                        "surface-container": "#eaedff",
+                        "on-secondary-fixed": "#002114",
+                        "surface-container-highest": "#dae2fd",
+                        "on-error": "#ffffff",
+                        "primary-container": "#1d61ff",
+                        "on-surface-variant": "#434656",
+                        "outline": "#737687",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#64fcbf",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#fff2ee",
+                        "on-tertiary-fixed-variant": "#822800",
+                        "on-secondary-fixed-variant": "#005138",
+                        "tertiary-container": "#c74200",
+                        "tertiary": "#9e3300",
+                        "primary-fixed-dim": "#b5c4ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#f4f3ff",
+                        "primary": "#004ad3",
+                        "background": "#faf8ff",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#e2e7ff",
+                        "secondary": "#006c4b",
+                        "on-secondary-container": "#007350",
+                        "surface-tint": "#0050e3",
+                        "inverse-primary": "#b5c4ff",
+                        "tertiary-fixed-dim": "#ffb59b",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#003bae",
+                        "secondary-fixed": "#64fcbf",
+                        "surface": "#faf8ff",
+                        "tertiary-fixed": "#ffdbcf",
+                        "primary-fixed": "#dce1ff",
+                        "on-background": "#131b2e",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#380d00",
+                        "surface-container-low": "#f2f3ff",
+                        "surface-bright": "#faf8ff",
+                        "outline-variant": "#c3c5d9",
+                        "surface-variant": "#dae2fd",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#41dfa5",
+                        "on-surface": "#131b2e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "8px",
+                        "gutter": "16px",
+                        "base": "4px",
+                        "xl": "32px",
+                        "sm": "12px",
+                        "md": "16px",
+                        "margin-mobile": "20px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "display-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .voice-room-gradient {
+            background: radial-gradient(circle at top right, #1d2b4f 0%, #00164e 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .avatar-ring-host {
+            box-shadow: 0 0 0 3px #1d61ff;
+        }
+        .avatar-ring-active {
+            box-shadow: 0 0 0 3px #64fcbf;
+        }
+        .tap-highlight-none {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-on-primary-fixed text-on-primary min-h-screen font-body-md flex flex-col overflow-hidden">
+<!-- Top App Bar -->
+<header class="flex justify-between items-center w-full px-margin-mobile pt-xs py-sm z-10">
+<button class="text-on-primary hover:opacity-80 transition-opacity scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<button class="text-on-primary hover:opacity-80 transition-opacity scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</header>
+<!-- Content Canvas -->
+<main class="flex-1 overflow-y-auto px-margin-mobile pb-xl">
+<!-- Header Info -->
+<div class="mt-sm mb-lg">
+<div class="flex items-center gap-xs mb-base">
+<h1 class="font-headline-md-mobile text-headline-md-mobile text-on-primary tracking-tight">Premier League Talk</h1>
+<span class="bg-error px-xs py-[2px] rounded-full text-[10px] font-bold tracking-widest text-white animate-pulse uppercase">Live</span>
+</div>
+<div class="flex items-center gap-xs text-primary-fixed-dim bg-white/5 inline-flex px-sm py-xs rounded-full">
+<span class="material-symbols-outlined text-[18px]" data-icon="translate">translate</span>
+<span class="font-label-sm text-label-sm">English</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward">arrow_forward</span>
+<span class="font-label-sm text-label-sm">Spanish</span>
+</div>
+</div>
+<!-- Participants Grid -->
+<div class="grid grid-cols-3 gap-y-lg gap-x-gutter mb-xl">
+<!-- Host: David -->
+<div class="flex flex-col items-center">
+<div class="relative mb-xs">
+<div class="w-16 h-16 rounded-full overflow-hidden avatar-ring-host p-0.5">
+<img class="w-full h-full object-cover rounded-full" data-alt="A professional headshot of a young adult male with short dark hair and a warm, welcoming smile, captured in high-resolution with soft studio lighting. The background is a clean, neutral grey that complements the modern fintech app aesthetic. The portrait represents a reliable host for a digital finance community." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCycWR6LPD1cwTtSREpcFMjAfeSTiNoHj5u6JghEFT9LN07FczRrhwbXsfTV7iMaWdOKIjHOdr6DF_s1jT2a7or8ah82ffdknT3kVuI1nuZ1sjfDfNKF99iXNHXHGOIEHQEit0qHWKifVhh6UNwBGU16kJWNnVaGcDW2l8yl6BYJUz2Tm5o3QuR00YOHhxsV0ObTmXF1yGOZZsG1em34E1je6MJk-h048cRjzwucjCOIVIP4_ZEKp0K"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-primary text-white p-1 rounded-full border-2 border-on-primary-fixed">
+<span class="material-symbols-outlined text-[12px]" data-icon="mic">mic</span>
+</div>
+</div>
+<p class="font-body-lg text-body-lg text-white">David</p>
+<p class="font-label-sm text-label-sm text-outline-variant">Host</p>
+</div>
+<!-- Speaker: Maria -->
+<div class="flex flex-col items-center">
+<div class="relative mb-xs">
+<div class="w-16 h-16 rounded-full overflow-hidden avatar-ring-active p-0.5">
+<img class="w-full h-full object-cover rounded-full" data-alt="A clear portrait of a professional woman with long brown hair, looking confident and engaged. The lighting is bright and modern, creating a trustworthy and accessible appearance suitable for a financial speaker profile. The image is framed as a circular avatar against a soft, monochromatic backdrop to maintain UI consistency." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKI7eyifAm4LTsBen1EVCGuoua5aVgvm2xrDHiqW-X1VVWyZo35ix5UhK5oXGxFcFXos5EHxOnJWxTj0jbYYtFfkrpc38ERc2dHW9WH9zsjeSaRB6ne1xFhBGEG2iMvlCVzu7X5bvkC5mnPNUNvEIwJtzPtu_i3hflFh_FjcrR-PJ6EsQA6Vz13zr59NHqBjjbXXyhUoOEQIaXI0ETyv67w1xqRynM5KepvxvhJRFtly_KVTQAOu77"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-secondary text-white p-1 rounded-full border-2 border-on-primary-fixed">
+<span class="material-symbols-outlined text-[12px]" data-icon="mic">mic</span>
+</div>
+</div>
+<p class="font-body-lg text-body-lg text-white">Maria</p>
+<p class="font-label-sm text-label-sm text-outline-variant">Speaker</p>
+</div>
+<!-- Speaker: Carlos -->
+<div class="flex flex-col items-center">
+<div class="relative mb-xs">
+<div class="w-16 h-16 rounded-full overflow-hidden border border-outline-variant p-0.5">
+<img class="w-full h-full object-cover rounded-full" data-alt="A portrait of a cheerful man with short black hair and a beard, dressed in a business casual polo. The image style is crisp and modern, featuring soft-key lighting that highlights his facial features without harsh shadows. This avatar represents a participant in a high-end fintech audio room, exuding professionalism and enthusiasm." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWCBmw97dt87xpy6lmVZVqnNGTSATN0wkpU1_BIWxVri3B2TQnDrbbC9U6TyRu3zSO6Xp9UL9C5i2t1XBR2dVvKh71ZeGGmoRukrnuzZqbPXuJV1UzEX3Z_csb6GuIHmWca57vkXVl1CdLa-6bpo-uhVl0bHZc5x8BZB5FiMN4IUtwGdhGksuEQLQ9Od_SdAFtZzAqDuYoHcFa9-3bhNXjNC0AGsPD8LJJKV-3egBFnG40bur3qRoG"/>
+</div>
+</div>
+<p class="font-body-lg text-body-lg text-white">Carlos</p>
+<p class="font-label-sm text-label-sm text-outline-variant">Speaker</p>
+</div>
+<!-- Listener: Emma -->
+<div class="flex flex-col items-center opacity-80">
+<div class="w-16 h-16 rounded-full overflow-hidden border border-outline-variant p-0.5 mb-xs">
+<img class="w-full h-full object-cover rounded-full" data-alt="Close-up portrait of a young woman with blonde hair, smiling naturally. The image has a clean, airy feel with soft-focus background, adhering to the project's 'Modern Utility' aesthetic. The composition is centered to fit a circular UI mask, maintaining a high-quality visual standard for the user experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCyqa4sNqOGx3VioxQbPKO-o3TQk2qS5N16liAgB8wpRMgVJNOwePxYgddNmntff2rgylusE5V7fQhYfkSSuIArtCnRnsEh2RbrOmNxoL0lrrsyQcm4SmsqieVqCRU00J4M4kWfWJkH4-eNy5r89Nm7opBqjHw381fLE6v5DH5qGhR8IKw5PvEmoD-6SgxbgLQ_kn0d-egmpw1NthTkXxCO_nv8yHDWABO4LrurQ-6OaFxFN2SgsRi"/>
+</div>
+<p class="font-body-lg text-body-lg text-white">Emma</p>
+<p class="font-label-sm text-label-sm text-outline-variant">Listener</p>
+</div>
+<!-- Listener: Liam -->
+<div class="flex flex-col items-center opacity-80">
+<div class="w-16 h-16 rounded-full overflow-hidden border border-outline-variant p-0.5 mb-xs">
+<img class="w-full h-full object-cover rounded-full" data-alt="A professional portrait of a young man with glasses and short brown hair, looking friendly and approachable. The lighting is even and bright, emphasizing clarity and transparency in line with the brand's fintech identity. The shot is tightly cropped for an avatar use case within a mobile interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBezoQ6XOMsji6tUv9gHSWtibkdZ8isfT2tXJsruz5G4Cx9kO-TcIxj5rv844MZUsWhkVZwaBme_EYdgEqXejmA6wSvTfEiDenYXNCjqgDPz2ewQ91HBzk0rkENicb31ToSEciEioLWh2FxU4zHZgM4SMlj8IDZ6AnOm1bKgMfM8gJP1U8XLBlEwXUJcgCXqCXn9d6MntIU8tlY-LVhijBKKWfKXXI8llnx5cGgwaPQVtL2aWELBFa6"/>
+</div>
+<p class="font-body-lg text-body-lg text-white">Liam</p>
+<p class="font-label-sm text-label-sm text-outline-variant">Listener</p>
+</div>
+<!-- +120 Listeners -->
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 rounded-full glass-card flex items-center justify-center mb-xs">
+<span class="font-headline-md text-headline-md text-primary-fixed-dim">120+</span>
+</div>
+<p class="font-body-lg text-body-lg text-white">Listeners</p>
+</div>
+</div>
+<!-- AI Translation Banner -->
+<div class="glass-card rounded-xl p-md flex items-start gap-md mb-xl animate-fade-in">
+<div class="bg-secondary-container rounded-full p-xs flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="flex flex-col">
+<p class="font-label-sm text-label-sm text-secondary-container tracking-wider uppercase font-bold">AI Translation is on</p>
+<p class="font-body-lg text-body-lg text-white">You are listening in Spanish</p>
+</div>
+</div>
+<!-- Call Controls -->
+<div class="flex justify-around items-center pt-md pb-lg">
+<div class="flex flex-col items-center gap-xs">
+<button class="w-14 h-14 rounded-full bg-white text-on-primary-fixed flex items-center justify-center transition-all active:scale-95 hover:opacity-90 tap-highlight-none">
+<span class="material-symbols-outlined text-[28px]" data-icon="mic_off">mic_off</span>
+</button>
+<span class="font-label-sm text-label-sm text-white">Mute</span>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<button class="w-14 h-14 rounded-full bg-white text-on-primary-fixed flex items-center justify-center transition-all active:scale-95 hover:opacity-90 tap-highlight-none">
+<span class="material-symbols-outlined text-[28px]" data-icon="front_hand">front_hand</span>
+</button>
+<span class="font-label-sm text-label-sm text-white">Raise Hand</span>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<button class="w-14 h-14 rounded-full bg-error text-white flex items-center justify-center transition-all active:scale-95 hover:opacity-90 tap-highlight-none">
+<span class="material-symbols-outlined text-[28px]" data-icon="call_end" style="font-variation-settings: 'FILL' 1;">call_end</span>
+</button>
+<span class="font-label-sm text-label-sm text-white">Leave</span>
+</div>
+</div>
+</main>
+<!-- Bottom Nav Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-xs pb-safe py-base bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant dark:border-outline shadow-lg">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors tap-highlight-none active:scale-95 transition-all w-1/5 py-base" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm mt-base">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors tap-highlight-none active:scale-95 transition-all w-1/5 py-base" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-label-sm text-label-sm mt-base">Marketplace</span>
+</a>
+<div class="w-1/5 flex justify-center py-base">
+<button class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-bold hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors tap-highlight-none active:scale-95 transition-all w-1/5 py-base" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="font-label-sm text-label-sm mt-base">Chats</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors tap-highlight-none active:scale-95 transition-all w-1/5 py-base" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-label-sm text-label-sm mt-base">Wallet</span>
+</a>
+</nav>
+<!-- Micro-interaction for the red dot -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const leaveBtn = document.querySelector('.bg-error');
+            leaveBtn.addEventListener('click', () => {
+                if(confirm('Are you sure you want to leave the room?')) {
+                    document.body.style.opacity = '0';
+                    setTimeout(() => window.location.reload(), 500);
+                }
+            });
+            
+            // Subtle mic animation
+            const micIcon = document.querySelector('.bg-primary .material-symbols-outlined');
+            setInterval(() => {
+                micIcon.style.opacity = micIcon.style.opacity === '0.7' ? '1' : '0.7';
+            }, 800);
+        });
+    </script>
+</body></html>
+
+<!-- FanBridge Community Events Screen -->
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>FanBridge Direct - Events</title>
+<!-- Tailwind CSS v3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1d61ff',
+            surface: '#faf8ff',
+            'surface-dim': '#d2d9f4',
+            'surface-container-low': '#f2f3ff',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          borderRadius: {
+            'custom': '8px',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="layout-styles">
+    body {
+      background-color: #ffffff;
+      color: #1a1a1a;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .active-tab {
+      border-bottom: 2px solid #1d61ff;
+      color: #1d61ff;
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="font-sans min-h-screen pb-24">
+<!-- BEGIN: MainHeader -->
+<header class="sticky top-0 bg-white z-20 border-b border-gray-100">
+<!-- Top Bar -->
+<div class="flex items-center justify-between px-4 py-3">
+<div class="flex items-center gap-3">
+<button class="p-1">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<div class="flex items-center gap-2">
+<div class="relative">
+<img alt="Liverpool Global" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlTQsfjEVq1_hXh5EyjQwRZsZYTtHRRULUcHSA0KRra0ZEpyZJJmUlRZkVuMeuNtecG_nrv_cY7o0KeSGKO8gJK-KZtc8GgA6l-g-g2bBFmKobeTX5tdvVoD4Ao7ieC-U1s43Ra0Hr9Mn7d1kJYXbPAxTJlLgpsgcFs1aBUzi_DhUSYlmj6-rzDTJEb8mFsfCd53_WNYaxxMXiazReNfQmXi1A5kwyv5Qyt-RUFjMJE5mjjE5XcYvU">
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></div>
+</div>
+<div>
+<h1 class="text-base font-bold leading-tight">Liverpool Global</h1>
+<p class="text-xs text-gray-500">12.4K members • Public</p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-1">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<button class="p-1">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Navigation Tabs -->
+<nav class="flex px-4 overflow-x-auto hide-scrollbar">
+<a class="px-4 py-3 text-sm font-semibold text-gray-500 whitespace-nowrap" href="#">Chat</a>
+<a class="px-4 py-3 text-sm font-semibold text-gray-500 whitespace-nowrap" href="#">Voice Rooms</a>
+<a class="px-4 py-3 text-sm font-semibold active-tab whitespace-nowrap" href="#">Events</a>
+<a class="px-4 py-3 text-sm font-semibold text-gray-500 whitespace-nowrap" href="#">About</a>
+</nav>
+</header>
+<!-- END: MainHeader -->
+<main class="px-4 py-6">
+<!-- BEGIN: UpcomingEventsSection -->
+<section class="mb-8" data-purpose="upcoming-events-section">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-xl font-bold">Upcoming Events</h2>
+<button class="text-primary text-sm font-semibold">See All</button>
+</div>
+<!-- Event Card 1 -->
+<article class="flex bg-white rounded-custom overflow-hidden mb-4 shadow-sm border border-gray-100 h-44">
+<div class="w-2/5 relative">
+<img alt="Match Stadium" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBksE61t920PMAmeONt9euGWkquaZdFj0xMmqs1TeAU_XOXIQKxlqPFq3DHYF2XFdpr3iPBNwoXjXf8ent3er-xszHPAX4dKwNYOcXSSf8o7XO3m9H67bCx_N39YyddhlIO1Yv-aiWBX4OLwj1Tin7GBIAcOi2AxheD2O6AC370nSllathG0fut9MCs4uLjiiq3guBogOK4w8ibc85hASOzlsYBUyR5FSHL41pdpF1kLgGAgi122iPb">
+<!-- Calendar Badge -->
+<div class="absolute top-2 left-2 bg-white rounded-lg p-1 w-10 text-center shadow-md">
+<div class="text-[10px] font-bold text-gray-800 border-b border-gray-100">07</div>
+<div class="text-[8px] font-bold text-gray-500 uppercase">Jun</div>
+</div>
+</div>
+<div class="w-3/5 p-3 flex flex-col justify-between">
+<div>
+<h3 class="text-sm font-bold leading-tight">Liverpool vs Man City</h3>
+<p class="text-[11px] text-gray-500 mb-1">Premier League</p>
+<div class="flex flex-col gap-0.5 mt-2">
+<div class="flex items-center gap-1.5 text-[10px] text-gray-600 font-medium">
+<svg class="h-3 w-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                4:30 PM
+              </div>
+<div class="flex items-center gap-1.5 text-[10px] text-gray-600 font-medium">
+<svg class="h-3 w-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                Anfield Stadium
+              </div>
+</div>
+</div>
+<button class="w-full bg-blue-50 text-primary text-xs font-bold py-1.5 rounded-md hover:bg-blue-100 transition-colors">View Tickets</button>
+</div>
+</article>
+<!-- Event Card 2 -->
+<article class="flex bg-white rounded-custom overflow-hidden mb-4 shadow-sm border border-gray-100 h-44">
+<div class="w-2/5 relative">
+<img alt="Legends Match" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvFSJtyUaQ8pn6xX2eSpn4SlEuvGM_-mbgwashwyFArt05yxcfCk8HBmyPjlUqA1iJ81SyjyOFoxHacaDKJfm9MCESxNGPDO-mk0FGCHUHrSHNhDitRiNaCS2i1IpFXNIlx-aue20Io-heB7vWOtayGifRNgOEHphylpsKMj2O83h4yIq3zDHLkTv4vbLOhMgsIAh_TWos86KxExDSpSg3WtV5hrpZUGGQaMv-xj9PH0ZDXRgHwjUQ">
+<!-- Calendar Badge -->
+<div class="absolute top-2 left-2 bg-white rounded-lg p-1 w-10 text-center shadow-md">
+<div class="text-[10px] font-bold text-gray-800 border-b border-gray-100">21</div>
+<div class="text-[8px] font-bold text-gray-500 uppercase">Jun</div>
+</div>
+</div>
+<div class="w-3/5 p-3 flex flex-col justify-between">
+<div>
+<h3 class="text-sm font-bold leading-tight">Legends Match</h3>
+<p class="text-[11px] text-gray-500 mb-1">Charity Game</p>
+<div class="flex flex-col gap-0.5 mt-2">
+<div class="flex items-center gap-1.5 text-[10px] text-gray-600 font-medium">
+<svg class="h-3 w-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                7:00 PM
+              </div>
+<div class="flex items-center gap-1.5 text-[10px] text-gray-600 font-medium">
+<svg class="h-3 w-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                Anfield Stadium
+              </div>
+</div>
+</div>
+<button class="w-full bg-blue-50 text-primary text-xs font-bold py-1.5 rounded-md hover:bg-blue-100 transition-colors">View Details</button>
+</div>
+</article>
+<!-- Event Card 3 -->
+<article class="flex bg-white rounded-custom overflow-hidden mb-4 shadow-sm border border-gray-100 h-44">
+<div class="w-2/5 relative">
+<img alt="Fan Fest" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHBAMkZzIZ8_5pX8EfpEbQHgz-sT8tWEVnIUMP9TKYB7oKXv3ti3FZX_akqrbjUGuAw4NH0DtnRSMaJyGawc3VdX62juv4ITHwdnjUB-twE0L5ta5KWEQsH8wJ5_G5VKTUDFQQ5mavkCw2Is6x1AaQdPVecYpx30a1OR6MuGJzn5DVGNLEWPWCfNVzbwPdXGH4FESjrmQE3bXzgQDtOeaZ9yAOYrPGdJp1Vr1RE25j4ahjg1R7KgZ2">
+<!-- Calendar Badge -->
+<div class="absolute top-2 left-2 bg-white rounded-lg p-1 w-10 text-center shadow-md">
+<div class="text-[10px] font-bold text-gray-800 border-b border-gray-100">05</div>
+<div class="text-[8px] font-bold text-gray-500 uppercase">Jul</div>
+</div>
+</div>
+<div class="w-3/5 p-3 flex flex-col justify-between">
+<div>
+<h3 class="text-sm font-bold leading-tight">LFC Fan Fest 2025</h3>
+<p class="text-[11px] text-gray-500 mb-1">Fan Community</p>
+<div class="flex flex-col gap-0.5 mt-2">
+<div class="flex items-center gap-1.5 text-[10px] text-gray-600 font-medium">
+<svg class="h-3 w-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                12:00 PM
+              </div>
+<div class="flex items-center gap-1.5 text-[10px] text-gray-600 font-medium">
+<svg class="h-3 w-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                Anfield Stadium
+              </div>
+</div>
+</div>
+<button class="w-full bg-blue-50 text-primary text-xs font-bold py-1.5 rounded-md hover:bg-blue-100 transition-colors">View Details</button>
+</div>
+</article>
+</section>
+<!-- END: UpcomingEventsSection -->
+<!-- BEGIN: PastEventsSection -->
+<section data-purpose="past-events-section">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-xl font-bold">Past Events</h2>
+<button class="text-primary text-sm font-semibold">See All</button>
+</div>
+<!-- Past Event Item -->
+<div class="flex items-center justify-between bg-white p-3 rounded-custom border border-gray-100 shadow-sm">
+<div class="flex items-center gap-3">
+<img alt="Match" class="w-12 h-12 rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp5sjoSI3g1mo2U8pV2byeca7SYXeKiuhq2fuSU_QVAvFpY797Bdb5I5ARpZc027DZzGThzFOwRK39pt0-mbc5kMmAeQZ2_-qayWGITtiji7m-kUL8VUKZGHpZfU_izBSw637n3BXIiGMSxYQAn1yIDmhaM21d95ommLfpcgwoREPaMuBHejdScj-yjYYW-EHVjt30FNH8vzkG5EfX398ytpcKEY3haqX7ME5iJ241DD9WZCl77xqG">
+<div>
+<h4 class="text-sm font-bold">Liverpool vs Arsenal</h4>
+<p class="text-xs text-gray-500">May 11, 2025</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<div class="text-base font-bold">2 - 1</div>
+<span class="text-[10px] font-bold text-green-500 px-1.5 py-0.5 bg-green-50 rounded">Win</span>
+</div>
+</div>
+</section>
+<!-- END: PastEventsSection -->
+</main>
+<!-- BEGIN: BottomNavigation -->
+<footer class="fixed bottom-0 w-full bg-white border-t border-gray-100 px-6 py-3 flex items-center justify-between z-30">
+<button class="flex flex-col items-center gap-1 group">
+<svg class="h-6 w-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-[10px] font-medium text-primary">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-[10px] font-medium">Marketplace</span>
+</button>
+<!-- Floating Action Button -->
+<div class="relative -top-8">
+<button class="bg-primary text-white p-3.5 rounded-full shadow-lg shadow-blue-200 border-4 border-white">
+<svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+</svg>
+</button>
+</div>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-[10px] font-medium">Chats</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-gray-400">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M3 10h18M7 15h1m4 0h1m-7 4h12a2 2 0 002-2V7a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-[10px] font-medium">Wallet</span>
+</button>
+</footer>
+<!-- END: BottomNavigation -->
+</body></html>
+
+<!-- FanBridge Community About Screen -->
+<!DOCTYPE html><html lang="en" style="width: 390px; height: 1027px; overflow: hidden; position: relative;"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>Liverpool Global - About</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            primary: '#1d61ff',
+            surface: '#faf8ff',
+            'surface-container': '#f2f3ff',
+            'liverpool-red': '#8e1b21',
+          },
+          borderRadius: {
+            'custom': '8px',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-layout">
+    body {
+      background-color: #ffffff;
+      -webkit-tap-highlight-color: transparent;
+      overflow-x: hidden;
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .active-tab::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: #1d61ff;
+    }
+    /* Fix for bottom nav spacing on mobile devices */
+    .pb-safe {
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+  </style>
+</head>
+<body class="font-sans text-slate-900 bg-white min-h-screen flex flex-col">
+<!-- BEGIN: NavigationHeader -->
+<header class="sticky top-0 z-50 bg-white pt-4 px-4 border-b border-gray-100" data-purpose="top-navigation">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<button aria-label="Back" class="p-1">
+<svg class="w-6 h-6" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m15 18-6-6 6-6"></path></svg>
+</button>
+<div class="relative">
+
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></div>
+</div>
+<div>
+<h1 class="text-sm font-bold leading-tight">Liverpool Global</h1>
+<p class="text-xs text-gray-500">12.4K members • Public</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button aria-label="Notifications" class="relative">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg>
+<span class="absolute top-0 right-0 w-1.5 h-1.5 bg-red-500 rounded-full"></span>
+</button>
+<button aria-label="More Options">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
+</button>
+</div>
+</div>
+<!-- Community Tabs -->
+<nav class="flex justify-between text-sm font-medium text-gray-500 px-2">
+<button class="pb-2 px-1">Chat</button>
+<button class="pb-2 px-1">Voice Rooms</button>
+<button class="pb-2 px-1">Events</button>
+<button class="pb-2 px-1 text-primary active-tab relative">About</button>
+</nav>
+</header>
+<!-- END: NavigationHeader -->
+<main class="flex-1 overflow-y-auto pb-24 px-4 pt-4 bg-gray-50/30">
+<!-- BEGIN: BannerSection -->
+<section class="relative rounded-2xl overflow-hidden bg-liverpool-red aspect-[16/7] flex items-center mb-6 shadow-sm" data-purpose="community-hero-banner">
+<!-- Background pattern/image overlay simulation -->
+<div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDsEbTFWyGpcMP96SNNR7d8ryc8K-yBsayr50N_6utasHomV7iOwKoR1fyL8yPzrkqSxYnACrbK4W_q3BdNTNlplQ3U13XCUlw3jMPM8xDPxAmjBAwX0t5QpNin8HL3CCl5rSzNtZovOTtg0-qNtaxrCWhvSYC8v5TBZ5FZ8cTma8FfdTnMweLQSLns-46CBltWAi2jnp10iORXPXUvqY6fi0tzM2ly7Q_SgtJxaz5Nu97D6jbQYYeOf0W_m7IKg0DhHA'); background-size: cover; background-position: center; filter: grayscale(100%) brightness(0.5);"></div>
+<div class="relative z-10 flex items-center px-6 gap-4">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center p-1 shadow-md">
+<!-- Extracted crest part from reference -->
+
+</div>
+<div class="text-white">
+<h2 class="text-lg font-bold">Liverpool Global</h2>
+<p class="text-xs opacity-90 italic">You'll Never Walk Alone.</p>
+</div>
+</div>
+</section>
+<!-- END: BannerSection -->
+<!-- BEGIN: AboutDescription -->
+<section class="bg-white rounded-2xl p-5 mb-4 border border-gray-100 shadow-sm" data-purpose="about-text-content">
+<h3 class="font-bold text-base mb-3">About Community</h3>
+<p class="text-sm text-gray-600 leading-relaxed">
+        The official global community for Liverpool fans around the world. Connect, chat, share passion and support our club together. YNWA! 🔴
+      </p>
+</section>
+<!-- END: AboutDescription -->
+<!-- BEGIN: InfoList -->
+<section class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden mb-8" data-purpose="community-meta-list">
+<!-- Community Rules -->
+<button class="w-full flex items-center gap-4 p-4 border-b border-gray-50 hover:bg-gray-50 transition-colors text-left group">
+<div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-primary">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path></svg>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-semibold">Community Rules</h4>
+<p class="text-xs text-gray-500">Respect everyone and keep it positive.</p>
+</div>
+<svg class="text-gray-300 group-hover:text-gray-400" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg>
+</button>
+<!-- Members -->
+<button class="w-full flex items-center gap-4 p-4 border-b border-gray-50 hover:bg-gray-50 transition-colors text-left group">
+<div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-primary">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-semibold">Members</h4>
+<p class="text-xs text-gray-500">12.4K Members</p>
+</div>
+<svg class="text-gray-300 group-hover:text-gray-400" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg>
+</button>
+<!-- Created On -->
+<button class="w-full flex items-center gap-4 p-4 border-b border-gray-50 hover:bg-gray-50 transition-colors text-left group">
+<div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-primary">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-semibold">Created On</h4>
+<p class="text-xs text-gray-500">Jan 15, 2023</p>
+</div>
+<svg class="text-gray-300 group-hover:text-gray-400" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg>
+</button>
+<!-- Language -->
+<button class="w-full flex items-center gap-4 p-4 border-b border-gray-50 hover:bg-gray-50 transition-colors text-left group">
+<div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-primary">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"></circle><line x1="2" x2="22" y1="12" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-semibold">Language</h4>
+<p class="text-xs text-gray-500">English</p>
+</div>
+<svg class="text-gray-300 group-hover:text-gray-400" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg>
+</button>
+<!-- Contact Admins -->
+<button class="w-full flex items-center gap-4 p-4 border-b border-gray-50 hover:bg-gray-50 transition-colors text-left group">
+<div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-primary">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-semibold">Contact Admins</h4>
+<p class="text-xs text-gray-500">Message the team</p>
+</div>
+<svg class="text-gray-300 group-hover:text-gray-400" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg>
+</button>
+<!-- Share Community -->
+<button class="w-full flex items-center gap-4 p-4 hover:bg-gray-50 transition-colors text-left group">
+<div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-primary">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line></svg>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-semibold">Share Community</h4>
+<p class="text-xs text-gray-500">Invite your friends</p>
+</div>
+<svg class="text-gray-300 group-hover:text-gray-400" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg>
+</button>
+</section>
+<!-- END: InfoList -->
+</main>
+<!-- BEGIN: BottomNavigation -->
+<footer class="fixed bottom-0 inset-x-0 bg-white border-t border-gray-100 px-6 pt-3 pb-safe z-50 shadow-2xl" data-purpose="main-bottom-nav">
+<nav class="flex items-center justify-between">
+<button class="flex flex-col items-center gap-1 group">
+<svg class="text-gray-400 group-hover:text-primary" fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+<span class="text-[10px] text-gray-400 group-hover:text-primary">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 group">
+<svg class="text-gray-400 group-hover:text-primary" fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><rect height="7" rx="1" width="7" x="3" y="3"></rect><rect height="7" rx="1" width="7" x="14" y="3"></rect><rect height="7" rx="1" width="7" x="14" y="14"></rect><rect height="7" rx="1" width="7" x="3" y="14"></rect></svg>
+<span class="text-[10px] text-gray-400 group-hover:text-primary">Marketplace</span>
+</button>
+<!-- Center Action Button -->
+<button class="relative -top-6 w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-lg shadow-primary/40" data-purpose="add-button">
+<svg fill="none" height="28" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewBox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14M5 12h14"></path></svg>
+</button>
+<button class="flex flex-col items-center gap-1 group">
+<svg class="text-gray-400 group-hover:text-primary" fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+<span class="text-[10px] text-gray-400 group-hover:text-primary">Chats</span>
+</button>
+<button class="flex flex-col items-center gap-1 group">
+<svg class="text-gray-400 group-hover:text-primary" fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><rect height="14" rx="2" width="20" x="2" y="5"></rect><line x1="2" x2="22" y1="10" y2="10"></line></svg>
+<span class="text-[10px] text-gray-400 group-hover:text-primary">Wallet</span>
+</button>
+</nav>
+</footer>
+<!-- END: BottomNavigation -->
+
+
+<div id="snapdom-sandbox" data-snapdom-sandbox="true" aria-hidden="true" style="position: absolute; left: -9999px; top: -9999px; width: 0px; height: 0px; overflow: hidden;"></div></body></html>
