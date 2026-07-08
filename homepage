@@ -1,0 +1,353 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>BabelFan App</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'app-bg': '#0f141e',
+            'card-bg': '#1a202c',
+            'brand-blue': '#2563eb',
+            'brand-red': '#ef4444',
+            'text-main': '#f8fafc',
+            'text-muted': '#94a3b8',
+            'border-subtle': '#2e3b4e'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<style data-purpose="custom-styles">
+    body {
+      background-color: #0f141e;
+      color: #f8fafc;
+      font-family: 'Inter', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 80px; /* Space for bottom nav */
+    }
+    
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .live-ring {
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      right: -4px;
+      bottom: -4px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      background: linear-gradient(#ef4444, #3b82f6) border-box;
+      -webkit-mask:
+        linear-gradient(#fff 0 0) padding-box, 
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+  </style>
+</head>
+<body class="bg-app-bg text-text-main max-w-md mx-auto relative min-h-screen">
+<!-- BEGIN: Top Status Bar -->
+
+<!-- END: Top Status Bar -->
+<!-- BEGIN: Header -->
+<header class="flex justify-between items-center px-4 py-3">
+<!-- Profile -->
+<div class="relative w-10 h-10">
+<img alt="Profile" class="w-full h-full rounded-full border-2 border-app-bg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVkeRJ9vn3AV0CSgpe5F-fISLTItKPA3MFIdTc1_W3CzA7PWUg7jdZQa8RjPtPgCplpPt-yzXL7pYwqJfD7mn9wd0mi4J797PEE1nmf6H1BrgsnuSK3WTYhIOmaVhGAzmrUqRftglZIwAn0iUmf74DY7VOEGeoW4D95-4Gb198yKf76vg1I2KPIreqGwssU9JQug4lefF2huSmaq_75tv6SfjIZHw823dz1U5Gj-8DtxV818qEY7pOGQ">
+<div class="absolute top-0 right-0 w-3 h-3 bg-blue-500 rounded-full border-2 border-app-bg"></div>
+</div>
+<!-- Logo -->
+<div class="flex items-center space-x-2">
+<div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center font-bold text-xl skew-x-[-10deg]">B</div>
+<span class="text-xl font-bold tracking-tight">BabelFan</span>
+</div>
+<!-- Notification -->
+<div class="relative">
+<i class="fa-regular fa-bell text-xl text-text-main"></i>
+<span class="absolute -top-1 -right-1 bg-blue-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full border-2 border-app-bg">3</span>
+</div>
+</header>
+<!-- END: Header -->
+<!-- BEGIN: Search -->
+<div class="px-4 py-2 flex space-x-3">
+<div class="flex-1 bg-card-bg rounded-full flex items-center px-4 py-2.5 border border-border-subtle">
+<i class="fa-solid fa-magnifying-glass text-text-muted mr-3"></i>
+<input class="bg-transparent border-none outline-none text-sm w-full text-text-main placeholder-text-muted focus:ring-0 p-0" placeholder="Search players, teams, events, communities..." type="text">
+</div>
+<button class="w-11 h-11 bg-card-bg rounded-full flex items-center justify-center border border-border-subtle text-blue-400">
+<i class="fa-solid fa-sliders text-sm"></i>
+</button>
+</div>
+<!-- END: Search -->
+<!-- BEGIN: League Rail -->
+<div class="overflow-x-auto no-scrollbar px-4 py-4">
+<div class="flex space-x-4 min-w-max">
+<!-- EPL LIVE -->
+<div class="flex flex-col items-center space-y-2 relative">
+<div class="relative w-16 h-16 rounded-full bg-card-bg border border-border-subtle flex items-center justify-center z-10">
+<div class="live-ring mb-2"></div>
+<img alt="EPL" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLKZ5CRRs-nbHPcj9Heud-wGg7UHlFVdOyEfMyipEpX84LFlw-kohN91OZWeyhM2vH9-EaS82I6s2B7D7zgw3_Q6j-gc6gGzZ20pfmFMeDzkvqVUM0vfz2IWiVWtoII0oPxHETcR0XI2x4QNh052kJ1a-uAPV9xMeSjsDSZFkBedr_IzkMXum3tO56ZO7gnZizS6rRswH5ocxBasglUKPKAjs3tYRcsOPjyCgV5XMD93xyB0Hgem2WBw">
+<div class="absolute -bottom-2 bg-red-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">LIVE</div>
+</div>
+<span class="text-[11px] font-medium text-text-muted mt-2">EPL</span>
+</div>
+<!-- NBA LIVE -->
+<div class="flex flex-col items-center space-y-2 relative">
+<div class="relative w-16 h-16 rounded-full bg-card-bg border border-border-subtle flex items-center justify-center z-10">
+<div class="live-ring mb-2"></div>
+<img alt="NBA" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvqs86hdZvW1R6TzXnW_xjD4a2dxfNWBXV7NKrEoJbY1GSQhtnfhJxxFj2cBgqBYjBXt-Pcj1HfmI0oK2uoeBGwNvN4xmZli3je-yefR80UFAntqHy-S05Yhy05ZtbayjVHqpn18bruy6XoSu6uzFQrMz-KxUuJ2FWR81--8fI4lSSm8s6QI_XthGKqH0lQXozvvYrNdoABqh8BwMDfdKaTEYXqvAzMrFpOKbuFXKaT6OwMfTyO8ewHg">
+<div class="absolute -bottom-2 bg-red-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">LIVE</div>
+</div>
+<span class="text-[11px] font-medium text-text-muted mt-2">NBA</span>
+</div>
+<!-- UCL LIVE -->
+<div class="flex flex-col items-center space-y-2 relative">
+<div class="relative w-16 h-16 rounded-full bg-card-bg border border-border-subtle flex items-center justify-center z-10">
+<div class="live-ring mb-2"></div>
+<img alt="UCL" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9BQEv6ptS8asOl3kIprc4jXDkQY3fX4vC3udZ8VUMxI4-DxqjttFOnmOdh9a6_b6LpmFFwCL2Gycj2cUm0lJn6YfcGzOt2Af51qWhWeOyPEkgjRfRvfMOyzlQKivnHxUftHE74CTfYQbE3lZq1HH8h5-ruPOM0QTuBiyyRj5EeIKqs5Z8RKpc6DJ5T-Pm10mnj-j4vUM1z66L5yZGWMZ49jkeTww0W4Om2TbZNzRLvDNlrI3AlPf6bw">
+<div class="absolute -bottom-2 bg-red-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">LIVE</div>
+</div>
+<span class="text-[11px] font-medium text-text-muted mt-2">UCL</span>
+</div>
+<!-- F1 -->
+<div class="flex flex-col items-center space-y-2">
+<div class="w-16 h-16 rounded-full bg-card-bg border border-border-subtle flex items-center justify-center">
+<img alt="F1" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXFnhDDBqyiuthf5Q71fKIaUh65lgCD-hMLmYbjQltqV54EluCO9YXQ7EJ-z_I7yK7sqaIWCs3KmkuoZiQkByHKV-mf4MsY1-9Qdtf4xwFZHmOHH2xhYXHDW4FMQvlrIiUC_SM_WdmE02sEckOnnF0ZxAsL_b0hPPwbCgl-KbNY7gKAHlP94OQaE6ZfmyQxtUWxvsCLAFnCfWAcXzykgO5rEqU5pOSiHTCnzGEmPQ0BDfdJhB7T5RllA">
+</div>
+<span class="text-[11px] font-medium text-text-muted">Formula 1</span>
+</div>
+<!-- Wimbledon -->
+<div class="flex flex-col items-center space-y-2">
+<div class="w-16 h-16 rounded-full bg-card-bg border border-border-subtle flex items-center justify-center p-1">
+<img alt="Wimbledon" class="w-full h-full rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxClRRLM6vDufVWqGEmajyXg-Eh12ERutAEWUBv3mkiT6ljk7LslnI00hjeupXZ6OdoIjtTx_Gi36MZG_2NBWZASpSeKud4dIb913zmRcmCTgAUU2uY8lCAF-MS-nOhw9EcCJhFpSMf-DDnRGKByrOBw4V3WMCL1K3WC0qoIP457kAsS41bwtIXl7t_wYbIyyegGsMlt7mCjP6qe3cAmjM17UMa_ri3syleTi2YLUYGzARJ22ep963eA">
+</div>
+<span class="text-[11px] font-medium text-text-muted">Wimbledon</span>
+</div>
+<!-- Cricket -->
+<div class="flex flex-col items-center space-y-2">
+<div class="w-16 h-16 rounded-full bg-card-bg border border-border-subtle flex items-center justify-center">
+<img alt="Cricket" class="w-8 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt_SaviEG5w2LZxxN_J1r1HNwv6k7Yxssdd_p9w0M7154qhDNL0ijQWwnLoQdMZ3uILC6txKaRB0RuKm6t4GwzKwc9Q1ryNVaNJM2CQO4p-iGj8ADOHUlfVMfJe7R7WfFIEvJAVgm6Cu_6Cd1h6LYuOlK5mxvNdRJ68FFzU5qp4QTWYfZMctoZLkIesPNmRP6YuXpemOynd3-vYnkhEXYw1cWcQaaJ0seBGytqjTvvSVNIkhSUF94Wqw">
+</div>
+<span class="text-[11px] font-medium text-text-muted">Cricket</span>
+</div>
+</div>
+</div>
+<!-- END: League Rail -->
+<!-- BEGIN: Trending Now -->
+<div class="px-4 py-2">
+<div class="flex justify-between items-center mb-3">
+<h2 class="text-base font-bold flex items-center"><span class="mr-2">🔥</span> Trending Now</h2>
+<a class="text-blue-500 text-sm font-medium" href="#">See all</a>
+</div>
+<div class="overflow-x-auto no-scrollbar">
+<div class="flex space-x-3 min-w-max pb-2">
+<!-- Trending Card 1 -->
+<div class="bg-card-bg border border-border-subtle rounded-lg px-3 py-2 min-w-max flex items-center space-x-2">
+  <div class="text-xs font-semibold text-text-main mb-2">Liverpool vs Barcelona</div>
+  <span class="text-text-muted text-[10px]">•</span>
+  <div class="text-[10px] text-text-muted flex items-center">
+    <i class="fa-solid fa-arrow-trend-up text-red-500 mr-1 text-[9px]"></i> 24.5K posts
+  </div>
+</div>
+<!-- Trending Card 2 -->
+<div class="bg-card-bg border border-border-subtle rounded-lg px-3 py-2 min-w-max flex items-center space-x-2">
+  <div class="text-xs font-semibold text-text-main mb-2">NBA Finals</div>
+  <span class="text-text-muted text-[10px]">•</span>
+  <div class="text-[10px] text-text-muted flex items-center">
+    <i class="fa-solid fa-arrow-trend-up text-red-500 mr-1 text-[9px]"></i> 18.3K posts
+  </div>
+</div>
+<!-- Trending Card 3 -->
+<div class="bg-card-bg border border-border-subtle rounded-lg px-3 py-2 min-w-max flex items-center space-x-2">
+  <div class="text-xs font-semibold text-text-main mb-2">Wimbledon 2026</div>
+  <span class="text-text-muted text-[10px]">•</span>
+  <div class="text-[10px] text-text-muted flex items-center">
+    <i class="fa-solid fa-arrow-trend-up text-red-500 mr-1 text-[9px]"></i> 12.8K posts
+  </div>
+</div>
+<!-- Trending Card 4 -->
+<div class="bg-card-bg border border-border-subtle rounded-lg px-3 py-2 min-w-max flex items-center space-x-2">
+  <div class="text-xs font-semibold text-text-main mb-2">F1 Monaco GP</div>
+  <span class="text-text-muted text-[10px]">•</span>
+  <div class="text-[10px] text-text-muted flex items-center">
+    <i class="fa-solid fa-arrow-trend-up text-red-500 mr-1 text-[9px]"></i> 9.7K posts
+  </div>
+</div>
+</div>
+</div>
+</div>
+<!-- END: Trending Now -->
+<!-- BEGIN: Live Score Card -->
+<div class="px-4 py-2 mb-2">
+<div class="bg-card-bg rounded-2xl border border-border-subtle p-3">
+<!-- Header -->
+<div class="flex justify-between items-center mb-2">
+<div class="flex items-center space-x-2">
+<span class="bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded uppercase">Live</span>
+<span class="text-[10px] text-text-muted">Premier League <i class="fa-solid fa-chevron-right text-[8px] ml-1"></i></span>
+</div>
+<i class="fa-solid fa-ellipsis text-text-muted"></i>
+</div>
+<!-- Teams & Score -->
+<div class="flex justify-between items-center px-4 mb-3">
+<div class="flex flex-col items-center">
+<img alt="Liverpool" class="w-10 h-10 mb-1 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAycch4rBEECNU4396Y7CtOlTGc5ar9QL9iqv05SwAI5ALL3Kkrih3YlSMVhPPdrO_I6h2xEjgvFQoeZcRHRF3EH6_YZ8ZYYCneQG9ElU9mR6KI5QQXOBwJJdbR4EPfB6SMpdg0q--Z5ADNn4fRuhjIbwjKbuyU39P73TQatRdUcjPOTMsMUm_JQtuwbpsdo2BCi4cqF5vvBty2nDcRnG0H2TYjyUQ_BLRg4qKlhTfeYWVC-J8Hv2g1zQ">
+<span class="font-semibold text-[11px]">Ali Hassan</span>
+</div>
+<div class="flex flex-col items-center"><div class="text-xl font-bold tracking-wider">2 - 1</div><span class="text-blue-500 text-[10px] font-medium">78:35</span></div>
+<div class="flex flex-col items-center">
+<img alt="Arsenal" class="w-10 h-10 mb-1 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE_yADlbdK-DCSTEL3NXY711cIZWS4iqvzpWSPdHC5ZY4pS9JR0SW2tXo3hoX4sGfId05fBVEgn2Am8LI9ySd_gsfuAAfz6RvmJdBYEXr0C1VvuwT9n1IUZcoOoySkR4caj-XHbguejoub9poYuYWqea-lSPxNnd9zs7qEYG8QZ7JU3sSNpzDL_STKvSzdySjgqmpt5oh4TlT99jJFYxIryKEzQH5MdeTYTKUL_KtuQS5-qCVQqIJDgg">
+<span class="font-semibold text-[11px]">Ali Hassan</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex space-x-2"><button class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-1 rounded-lg text-[10px] font-semibold flex justify-center items-center"><i class="fa-solid fa-comment-dots mr-1 text-sm"></i> Discussion</button><button class="flex-1 bg-[#232b38] hover:bg-gray-700 text-white py-1 rounded-lg text-[10px] font-semibold flex justify-center items-center border border-border-subtle"><i class="fa-solid fa-microphone-lines mr-1"></i> Voice Room</button><button class="w-8 bg-[#232b38] hover:bg-gray-700 text-white rounded-lg flex justify-center items-center border border-border-subtle"><i class="fa-solid fa-ellipsis text-xs"></i></button></div>
+</div>
+</div>
+<!-- END: Live Score Card -->
+<!-- BEGIN: Post 1 -->
+<div class="px-4 py-2 border-b border-border-subtle/50 pb-4 mb-2 bg-[#121824]">
+<!-- Post Header -->
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center space-x-3">
+<img alt="Ali Hassan" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqku3G0or30bhdFMV6CRPKXyE1QKFZ8_fl8mmHV68TcdNO5qW4-ADv0KZhkSXRUziEOfb8AkJyLl8IxyXy-68eENbNlF0MnZK47_4shal-Wju2Zu6spwLILsvUvAs57XQdidiztU4uTOEtACJxAEqZJYX6EmuB9mPeVL2Et7_orRT-AbPtBNlximhnBXRvUiaTmC09yQLB12qm67t-5rtwDSTpMOTiFq1qZIJMrLBds2AyILcpw8A_wg">
+<div>
+<div class="flex items-center space-x-1">
+<span class="font-semibold text-sm">Ali Hassan</span>
+<i class="fa-solid fa-circle-check text-blue-500 text-[10px]"></i>
+<span class="text-text-muted text-xs mx-1">•</span>
+<span class="text-red-500 text-xs font-medium">Liverpool Community</span>
+</div>
+<div class="flex items-center text-xs text-text-muted mt-0.5 space-x-1">
+<span class="">2h ago</span>
+<span class="">•</span>
+<i class="fa-solid fa-globe text-[10px]"></i>
+</div>
+</div>
+</div>
+<i class="fa-solid fa-ellipsis text-text-muted"></i>
+</div>
+<!-- Post Content -->
+<p class="text-sm mb-3">Anfield is always a different beast at night! 🔴🔥 <br><span class="text-blue-400">#YNWA #LFC</span></p>
+<!-- Post Image -->
+<div class="rounded-xl overflow-hidden mb-4 border border-border-subtle h-40">
+<img alt="Anfield Stadium" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACrbvZRqPQuIue_Mxh_fHD6Qo_Ll2adVKujKnSclcvsrJgFm9XqF8Z-E-ME_hxI5xP3BJ0MExnpvzAdJt2ikEtLUXz8MDtwYG3bA7S0iVuXcuy8SA9qY5lZHt4vF7OBkDFz_yer4DYGNAOVhlaC-21UAkoxlnQ6DPd5_fyZxEihBYhF4yNgZqX9wdmK5GTzH9lvG8AuPSs9h6kEeNC35CeBS-_ll8UyP5OG3GkZv2pjbCWVFHnW_pkzg">
+</div>
+<!-- Post Actions -->
+<div class="flex justify-between items-center text-text-muted text-sm px-1"><div class="flex space-x-3 text-[10px] font-medium">
+<button class="flex items-center space-x-1">
+<i class="fa-solid fa-language text-base"></i>
+<span class="">Translate</span>
+</button>
+<button class="flex items-center space-x-1">
+<i class="fa-solid fa-swords text-base"></i>
+<span class="">Challenge</span>
+</button>
+</div>
+<div class="flex space-x-4 text-[11px]">
+<button class="flex items-center space-x-1.5 hover:text-red-500">
+<i class="fa-solid fa-heart text-red-500 text-xs"></i>
+<span class="">2.1K</span>
+</button>
+<button class="flex items-center space-x-1.5 hover:text-blue-400">
+<i class="fa-regular fa-comment text-xs"></i>
+<span class="">583</span>
+</button>
+<button class="flex items-center space-x-1.5 hover:text-green-400">
+<i class="fa-solid fa-retweet text-xs"></i>
+<span class="">342</span>
+</button>
+</div></div>
+</div>
+<!-- END: Post 1 -->
+<!-- BEGIN: Post 2 -->
+<div class="px-4 py-2 pb-4 bg-[#121824]">
+<!-- Post Header -->
+<div class="flex justify-between items-start mb-3">
+<div class="flex items-center space-x-3">
+<img alt="FC Barcelona" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHVh81qJrzYr8700dP8aVdOhLA-T86tNkfUzBj4XkKyvB2AWBA0ZOwx-y-mo-uw9hGWl3bBSVn7x0-7SG9BS-xDwRYk1KOxx3wRSJE-KCtudfHDB-SZYQqQoT52VMUBACxo06uF0GP-4PJ1wr0bc4o4w2WCN48N1X1Q6rOkIE2_bbzRMw4vmafxfdEKyYww3rFd4nCa2OKoKbfinmuhzggyC_-29vImmWq4cyEs_8po2WBI7nDYptDug">
+<div>
+<div class="flex items-center space-x-1">
+<span class="font-semibold text-sm">FC Barcelona</span>
+<i class="fa-solid fa-circle-check text-blue-500 text-[10px]"></i>
+<span class="text-text-muted text-xs font-normal">@FCBarcelona</span>
+</div>
+<div class="text-xs text-text-muted mt-0.5">
+<span class="">3h ago</span>
+</div>
+</div>
+</div>
+<i class="fa-solid fa-ellipsis text-text-muted"></i>
+</div>
+<!-- Post Content -->
+<p class="text-sm mb-3">New home jersey 25/26 is here! 💙❤️<br>Made for the fans. Inspired by greatness.</p>
+<div class="flex space-x-4 mb-2">
+<button class="bg-transparent border border-border-subtle rounded-lg px-4 py-1.5 text-sm font-medium flex items-center space-x-2 hover:bg-gray-800">
+<i class="fa-solid fa-bag-shopping text-blue-400"></i>
+<span class="">Shop Now</span>
+</button>
+</div>
+<!-- Post Image Placeholder for Jersey -->
+<div class="relative w-full h-48 flex justify-end">
+<img alt="Barcelona Jersey" class="w-48 h-48 object-contain absolute right-0 top-[-60px]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE09JDgMeLhGAVRwbAzyAWyYKjkEjYiC6sbFHuJjpIrP9nkMB5NKAWplrecwkTujnbSRF_KaSbNOa0Hy1NWMQ3Ku0SGfruYcylOb-__wbKbS2oc3FnVFwoeCGE3NSNvgnltg78JAfE4z1M5k8QyMYeIDAPUaXSwiq8Lz9jZIoUNa5r3lWifzH3iFOUgGb0kbSuH5NUaoUjOMIErFjbCAt8IxTITiNPknkdu0x0VLZeOt0WhjHElEnk6g">
+</div>
+</div>
+<!-- END: Post 2 -->
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-4 w-14 h-14 bg-blue-600 rounded-full shadow-lg flex items-center justify-center text-white hover:bg-blue-700 z-50">
+<i class="fa-solid fa-feather-pointed text-xl"></i>
+<div class="absolute bottom-3 right-3 bg-white text-blue-600 rounded-full w-4 h-4 flex items-center justify-center text-[10px] font-bold border-2 border-blue-600">+</div>
+</button>
+<!-- BEGIN: Bottom Navigation -->
+<nav class="fixed bottom-0 w-full max-w-md mx-auto bg-app-bg/95 backdrop-blur-md border-t border-border-subtle px-6 py-2 pb-6 z-40">
+<div class="flex justify-between items-center relative">
+<!-- Feed (Active) -->
+<a class="flex flex-col items-center text-blue-500 space-y-1" href="#">
+<i class="fa-solid fa-house text-xl"></i>
+<span class="text-[10px] font-medium">Feed</span>
+</a>
+<!-- Market -->
+<a class="flex flex-col items-center text-text-muted hover:text-text-main space-y-1" href="#">
+<i class="fa-solid fa-bag-shopping text-xl"></i>
+<span class="text-[10px] font-medium">Market</span>
+</a>
+<!-- Translate (Central Button) -->
+<div class="relative flex justify-center -mt-8">
+<button class="w-14 h-14 bg-blue-600 rounded-full border-4 border-app-bg flex items-center justify-center text-white shadow-lg hover:bg-blue-700">
+<i class="fa-solid fa-language text-2xl"></i>
+</button>
+<span class="absolute -bottom-4 text-[10px] font-medium text-text-muted">Translate</span>
+</div>
+<!-- Chats -->
+<a class="flex flex-col items-center text-text-muted hover:text-text-main space-y-1" href="#">
+<i class="fa-regular fa-comment-dots text-xl"></i>
+<span class="text-[10px] font-medium">Chats</span>
+</a>
+<!-- Wallet -->
+<a class="flex flex-col items-center text-text-muted hover:text-text-main space-y-1" href="#">
+<i class="fa-solid fa-wallet text-xl"></i>
+<span class="text-[10px] font-medium">Wallet</span>
+</a>
+</div>
+<!-- Home Indicator -->
+<div class="w-1/3 h-1 bg-white rounded-full mx-auto mt-4"></div>
+</nav>
+<!-- END: Bottom Navigation -->
+
+
+
+
+</body></html>
