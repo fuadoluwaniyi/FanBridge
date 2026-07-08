@@ -192,3 +192,134 @@
 
 
 </body></html>
+
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>FanBridge Onboarding - Stay Updated</title>
+<!-- Tailwind CSS v3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-blue': '#1D4ED8', // Primary blue from FanBridge palette
+            'brand-light-blue': '#EBF2FF',
+            'status-green': '#22C55E'
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-layout">
+    /* Custom shadow and perspective for overlapping cards */
+    .card-shadow {
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    }
+    .notification-overlay {
+      transform: translateY(-20px);
+      z-index: 10;
+    }
+    /* Hide scrollbar for clean mobile look */
+    body::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-white font-sans text-gray-900 flex justify-center items-start min-h-screen">
+<!-- BEGIN: MobileScreenContainer -->
+<main class="w-full max-w-[430px] h-screen bg-white flex flex-col p-6 relative overflow-hidden" data-purpose="onboarding-screen">
+<!-- BEGIN: HeaderSection -->
+<header class="mt-8 mb-10" data-purpose="text-content">
+<h1 class="text-[32px] font-bold leading-tight">
+<span class="text-brand-blue">Stay updated</span><br>
+<span class="text-gray-900">in real time</span>
+</h1>
+<p class="mt-4 text-gray-600 text-base leading-relaxed max-w-[280px]">
+        Live scores, breaking news and exclusive updates. Be the first to know.
+      </p>
+</header>
+<!-- END: HeaderSection -->
+<!-- BEGIN: VisualDisplayArea -->
+<section class="flex-1 relative flex flex-col items-center" data-purpose="interactive-preview">
+<!-- Background: Score Card -->
+<div class="w-[90%] bg-white border border-gray-100 rounded-[24px] p-5 card-shadow relative z-0 opacity-80" data-purpose="score-card">
+<div class="text-center mb-4">
+<p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Champions League</p>
+<p class="text-[10px] text-gray-400">Quarter Final</p>
+</div>
+<div class="flex justify-between items-center px-2">
+<div class="flex flex-col items-center w-20">
+<img alt="Man City Logo" class="w-10 h-10 mb-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbxJ8kmqnjNyVdLD7eEaKzD_qlaLF4Fv_DgNaP8Xmo99qM9_OApeCslLPVtaxbWM4nHgoQff0ws8eh-n-ynLNIaSDIbTXK_ETj2Z_wx3--GpKwCWonAAkT4-nBmt8oHOQ6x_8sg2-VTJMX_bvX24bbtXtYcJ5lymGJu1GcyOvr9rHz5xD-_lWtNP7N3QX2s_-ZW-nlSKdMRINLG3nC6_JodpskpWGAuHhFoNWusyuB1HXmjw3CrUtX">
+<span class="text-[11px] font-bold">Man City</span>
+</div>
+<div class="text-2xl font-black flex items-center gap-4">
+<span class="">2</span>
+<span class="text-gray-300">-</span>
+<span class="">1</span>
+</div>
+<div class="flex flex-col items-center w-20">
+<img alt="Real Madrid Logo" class="w-10 h-10 mb-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrYR0lE8hEPobhciKDs80scCcnj9_u83s6IpsKwA2rGRW2mbOxMg9NJJTiDgxljlwS_j3UUW4YQVZTYEtWSAl9e25Dcw_GuMuYfYMoBtgp3YfqqGbkeD0HXqj1iMI4rhT963tdFfB83d2_d4WTvriOn3esqk_YZKjhfHEmcbR67MTYaK6P2Gm_VCt8_TmTDNFWeuvak34iCcUryX6H30GWQC9KVCtV8gv1jDbWUpXPP376QMBeGuU2">
+<span class="text-[11px] font-bold">Real Madrid</span>
+</div>
+</div>
+<div class="mt-4 flex justify-center">
+<span class="text-status-green text-[10px] font-bold">Live 78'</span>
+</div>
+</div>
+<!-- Foreground Overlay: Goal Notification -->
+<div class="w-[95%] bg-white border border-gray-100 rounded-[24px] p-5 card-shadow notification-overlay" data-purpose="notification-card">
+<div class="flex justify-between items-center mb-3">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 bg-brand-blue rounded-md flex items-center justify-center text-white text-[10px] font-bold">F</div>
+<span class="text-xs font-bold text-gray-800">fanBridge</span>
+</div>
+<span class="text-[10px] text-gray-400">1m ago</span>
+</div>
+<h3 class="text-sm font-bold text-gray-900 mb-3">
+          Goal! Haaland makes it 2-1 for Man City! 🔵⚽️
+        </h3>
+<!-- Actionable Image Preview -->
+<div class="rounded-xl overflow-hidden aspect-[16/9] w-full">
+<img alt="Haaland Celebration" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOCyxL2YAE99XI4l9tlHGNu4IwZJtQC9AqmhS5HQPDnbWDBayknFSS5FVAAtxsvQ0pGfKYSKjCUGxnW9whaZa_QD4bjN_8Kf1K2-5_aujuTB-U3PMS9jHvJuuiN6I2-nJyIdOQp3ykg6wCLcf2A-spiGMtf0nhl998ii9M8_XQgoxL_AmGHjve8r39jAUFxozWaYYP2IaJSk5DGbkrJt6JdVRTKiwna7E9wwkQy-1wc965Y8Tu618f">
+</div>
+</div>
+<!-- Lower Card Peeking Out -->
+<div class="w-[85%] bg-white border border-gray-100 rounded-t-[24px] p-5 card-shadow mt-[-10px] opacity-40" data-purpose="social-peek">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-gray-200"></div>
+<div>
+<p class="text-[10px] font-bold">Lakers</p>
+<p class="text-[8px] text-gray-400">@Lakers · 3h</p>
+</div>
+</div>
+<p class="text-[11px] mt-2">Big win tonight! 💜💛</p>
+</div>
+</section>
+<!-- END: VisualDisplayArea -->
+<!-- BEGIN: FooterNavigation -->
+<footer class="mt-auto pt-4 pb-10" data-purpose="navigation-controls">
+<!-- Pagination Dots -->
+<div class="flex justify-center gap-2 mb-8">
+<div class="w-2 h-1 bg-gray-200 rounded-full"></div>
+<div class="w-2 h-1 bg-brand-blue rounded-full"></div>
+<div class="w-2 h-1 bg-gray-200 rounded-full"></div>
+</div>
+<!-- Action Button -->
+
+</footer>
+<!-- END: FooterNavigation -->
+<button class="w-full bg-brand-blue text-white font-bold py-4 rounded-2xl hover:bg-blue-700 transition-colors shadow-md text-sm mt-auto" id="next-button">Next</button></main>
+<!-- END: MobileScreenContainer -->
+<script data-purpose="event-handlers">
+    // Simple button interaction
+    document.getElementById('next-button').addEventListener('click', () => {
+      console.log('Navigating to next onboarding step...');
+    });
+  </script>
+
+
+
+
+</body></html>
